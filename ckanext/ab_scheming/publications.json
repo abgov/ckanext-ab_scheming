@@ -322,8 +322,11 @@
     },
     {
       "field_name": "email",
-      "label": "E-mail",
-      "form_placeholder": "e-mail"
+      "label": "Contact Email",
+      "form_placeholder": "opendata@gov.ab.ca",
+      "display_property": "dc:creator",
+      "display_snippet": "email.html",
+      "display_email_name_field": "author"
     },
     {
       "field_name": "contactother",
