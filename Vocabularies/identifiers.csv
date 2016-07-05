@@ -1,0 +1,12 @@
+label,value
+FOIP Number,foip-number
+ISBN (print),ISBN-print
+ISBN (pdf),ISBN-pdf
+ISBN (html),ISBN-html
+ISBN (CD-ROM),ISBN-cdrom
+ISBN (DVD),ISBN-dvd
+ISSN (print),ISSN-print
+ISSN (online),ISSN-online
+AGDEX number,AGDEX-number
+ALIS catalogue number,ALIS-catno
+NEOS catalogue key,NEOS-catkey

@@ -1,0 +1,10 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "dataset",
+  "about": "A reimplementation of the default CKAN dataset schema",
+  "about_url": "http://open.alberta.ca/dataset",
+  "dataset_fields": [
+  ],
+  "resource_fields": [
+  ]
+}

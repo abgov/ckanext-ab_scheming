@@ -1,0 +1,203 @@
+.dataset-form input, .dataset-form textarea, .dataset-form select {
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.dataset-form .error-explanation {
+	border: 1px solid #DD0300;
+	background-color: rgba(221,3,0,0.1);
+	border-radius: 3px;
+}
+
+.dataset-form .error-explanation p {
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.dataset-form input[type="checkbox"] {
+	display: inline;
+	margin-right: 5px;
+}
+
+.dataset-form label {
+	padding-bottom: 5px;
+}
+
+.alberta-theme #dataset-edit::after {
+	content: ' ';
+	clear: both;
+	display: block;
+}
+
+.alberta-theme #dataset-edit ol.stages {
+	padding-left: 0;
+	border-bottom: #dddddd 1px solid;
+}
+
+.alberta-theme #dataset-edit ol.stages li {
+	float: left;
+	padding: 10px 15px 10px 15px;
+	list-style-type: number;
+	list-style-position: inside;
+}
+
+.alberta-theme #dataset-edit ol.stages li.active {
+		background-color: #5ec5e3;
+}
+
+.alberta-theme #dataset-edit ol.stages::after {
+	content: ' ';
+	clear: both;
+	display: block;
+}
+
+.alberta-theme .control-label {
+	padding-bottom: 10px;
+}
+
+.alberta-theme .controls > div {
+	padding: 5px;
+}
+
+
+#dataset-edit > div#form-item-contact, #dataset-edit > div#form-item-contact_email, #dataset-edit > div#form-item-contactphone, #dataset-edit > div#form-item-email, #dataset-edit > div#form-item-other, #dataset-edit > div#form-item-contactother  {
+	width: 280px;
+	float: left;
+	padding: 0 25px 0 0px;
+    margin: 50px 0 15px;
+}
+
+#dataset-edit > div#form-item-contact::before {
+    display: block;
+    content: 'Contact Information';
+    position: absolute;
+    margin-top: -35px;
+    font-size: 21px;
+    border-bottom: 1px solid #cecece;
+    font-weight: bold;
+    width: 100%;
+}
+
+#dataset-edit > div#form-item-contact::after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    border-bottom: 1px solid #cecece;
+    width: 100%;
+    padding-top: 15px;
+}
+
+#dataset-edit > div#form-item-contact .info-block  {
+	width: 850px;
+	position: relative;
+	padding-top: 115px;
+}
+
+#dataset-edit > div#form-item-contactphone + div, #dataset-edit > div#form-item-other + div, #dataset-edit > div#form-item-contactother + div {
+	clear: both;
+}
+
+
+#dataset-edit > div[id^=form-item-identifier]  {
+	width: 280px;
+	float: left;
+	padding: 0px 25px 0 0px;
+    margin: 50px 0 15px;
+}
+
+#dataset-edit > div[id^=form-item-identifier-type]::before {
+    display: block;
+    content: 'Identifier Information';
+    position: absolute;
+    margin-top: -35px;
+    font-size: 21px;
+    border-bottom: 1px solid #cecece;
+    font-weight: bold;
+    width: 100%;
+}
+
+#dataset-edit > div[id^=form-item-identifier-type]::after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    border-bottom: 1px solid #cecece;
+    width: 100%;
+    padding-top: 15px;
+}
+
+#dataset-edit > div[id^=form-item-identifier-type] .info-block  {
+	width: 850px;
+	position: relative;
+	padding-top: 10px;
+}
+
+#dataset-edit > div[id^=form-item-identifier] + div { 
+	clear: both;
+}
+
+#dataset-edit > div#form-item-time_coverage_to + div {
+    clear: both;
+}
+
+#dataset-edit > div#form-item-time_coverage_from, #dataset-edit > div#form-item-time_coverage_to {
+	width: 280px;
+	float: left;
+	padding: 0 25px 0 0px;
+    margin: 50px 0 15px;
+}
+
+#dataset-edit > div#form-item-time_coverage_from::before {
+    display: block;
+    content: 'Temporal Coverage';
+    position: absolute;
+    margin-top: -35px;
+    font-size: 21px;
+    border-bottom: 1px solid #cecece;
+    font-weight: bold;
+    width: 100%;
+}
+
+#dataset-edit > div#form-item-time_coverage_from::after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    border-bottom: 1px solid #cecece;
+    width: 100%;
+    padding-top: 15px;
+}
+
+#dataset-edit > div#form-item-time_coverage_from .info-block  {
+	width: 850px;
+	position: relative;
+	padding-top: 10px;
+}
+
+#dataset-edit > div#form-item-spatialcoverage1 {
+	clear: both;
+}
+
+#dataset-edit select {
+	padding: 5px;
+}
+
+#dataset-edit select option {
+		padding: 5px 0 5px 5px;
+}
+
+.ui-datepicker {
+    width: auto !important;
+}

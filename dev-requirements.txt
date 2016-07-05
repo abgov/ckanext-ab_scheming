@@ -1,0 +1,2 @@
+-e git+https://github.com/open-data/ckanext-scheming@master#egg=ckanext-scheming
+-e git+https://github.com/open-data/ckanext-repeating@master#egg=ckanext-repeating
