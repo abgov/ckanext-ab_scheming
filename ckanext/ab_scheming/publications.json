@@ -29,6 +29,15 @@
       "help_inline": false
     },
     {
+      "field_name": "date_published",
+      "label": "Date Published",
+      "preset": "date",
+      "validators": "ignore_missing isodate",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which the intellectual content of an information resource is published.",
+      "help_inline": false
+    },
+    {
       "field_name": "alternatetitle1",
       "label": "Alternative Title",
       "help_text": "An alternative name used as a substitute or additional access point for an information resource.",

@@ -30,6 +30,15 @@
 	  "validators": "scheming_required"
     },
     {
+      "field_name": "date_published",
+      "label": "Date Published",
+      "preset": "date",
+      "validators": "ignore_missing isodate",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which the intellectual content of an information resource is published.",
+      "help_inline": false
+    },
+    {
       "field_name": "notes",
       "label": "Description",
       "form_snippet": "markdown.html",
@@ -39,7 +48,6 @@
       "required": true,
 	  "validators": "scheming_required" 
     },
-
     {
       "field_name": "alternatetitle",
       "label": "Alternative Title",
@@ -54,6 +62,7 @@
       "help_inline": false,
       "preset": "multiple_select",
       "choices": [
+	{"value": "Aboriginal Relations", "label": "Aboriginal Relations"},
 	{"value": "Advanced Education", "label": "Advanced Education"},
 	{"value": "Agriculture and Forestry", "label": "Agriculture and Forestry"},
 	{"value": "Agriculture and Rural Development", "label": "Agriculture and Rural Development"},
@@ -68,17 +77,15 @@
 	{"value": "Government of Alberta", "label": "Government of Alberta"},
 	{"value": "Health", "label": "Health"},
 	{"value": "Human Services", "label": "Human Services"},
-	{"value": "Indigenous Relations", "label": "Indigenous Relations"},
 	{"value": "Infrastructure", "label": "Infrastructure"},
 	{"value": "Innovation and Advanced Education", "label": "Innovation and Advanced Education"},
 	{"value": "International and Intergovernmental Relations", "label": "International and Intergovernmental Relations"},
+	{"value": "Jobs, Skills, Training and Labour", "label": "Jobs, Skills, Training and Labour"},
 	{"value": "Justice and Solicitor General", "label": "Justice and Solicitor General"},
-	{"value": "Labour", "label": "Labour"},
 	{"value": "Land Use Secretariat", "label": "Land Use Secretariat"},
 	{"value": "Municipal Affairs", "label": "Municipal Affairs"},
-	{"value": "non-Government of Alberta entity", "label": "non-Government of Alberta entity"},
 	{"value": "Public Affairs Bureau", "label": "Public Affairs Bureau"},
-	{"value": "Seniors and Housing", "label": "Seniors and Housing"},
+	{"value": "Seniors", "label": "Seniors"},
 	{"value": "Service Alberta", "label": "Service Alberta"},
 	{"value": "Status of Women", "label": "Status of Women"},
 	{"value": "Transportation", "label": "Transportation"},
@@ -93,7 +100,6 @@
 	{"value": "Queen\u2019s Printer", "label": "Queen\u2019s Printer"},
 	{"value": "====================================================", "label": "===================================================="},
 	{"value": "Aboriginal Affairs and Northern Development (2000-2006)", "label": "Aboriginal Affairs and Northern Development (2000-2006)"},
-	{"value": "Aboriginal Relations (2008\u20132011, 2013\u20132016)", "label": "Aboriginal Relations (2008\u20132011, 2013\u20132016)"},
 	{"value": "Advanced Education and Career Development (1992-1999)", "label": "Advanced Education and Career Development (1992-1999)"},
 	{"value": "Advanced Education and Manpower (1975-1983)", "label": "Advanced Education and Manpower (1975-1983)"},
 	{"value": "Advanced Education and Technology (2006-2012)", "label": "Advanced Education and Technology (2006-2012)"},
@@ -152,7 +158,6 @@
 	{"value": "Innovation and Science (1999-2006)", "label": "Innovation and Science (1999-2006)"},
 	{"value": "Intergovernmental and Aboriginal Affairs (1997-1999)", "label": "Intergovernmental and Aboriginal Affairs (1997-1999)"},
 	{"value": "International, Intergovernmental and Aboriginal Relations (2006-2008, 2011-2012)", "label": "International, Intergovernmental and Aboriginal Relations (2006-2008, 2011-2012)"},
-	{"value": "Jobs, Skills, Training and Labour (2013\u20132016)", "label": "Jobs, Skills, Training and Labour (2013\u20132016)"},
 	{"value": "Justice and Attorney General (1993-2011)", "label": "Justice and Attorney General (1993-2011)"},
 	{"value": "Justice (1992-1993, 2011-2012)", "label": "Justice (1992-1993, 2011-2012)"},
 	{"value": "Labour (1959-1972, 1975-1999)", "label": "Labour (1959-1972, 1975-1999)"},
@@ -173,7 +178,6 @@
 	{"value": "Resource Development (1999-2001)", "label": "Resource Development (1999-2001)"},
 	{"value": "Restructuring and Government Efficiency (2004-2006)", "label": "Restructuring and Government Efficiency (2004-2006)"},
 	{"value": "Revenue (2001-2004)", "label": "Revenue (2001-2004)"},
-	{"value": "Seniors (2001\u20132004, 2011\u20132013, 2014\u20132016)", "label": "Seniors (2001\u20132004, 2011\u20132013, 2014\u20132016)"},
 	{"value": "Seniors and Community Supports (2004-2011)", "label": "Seniors and Community Supports (2004-2011)"},
 	{"value": "Social Development (1969-1971)", "label": "Social Development (1969-1971)"},
 	{"value": "Social Services and Community Health (1975-1986)", "label": "Social Services and Community Health (1975-1986)"},
@@ -299,6 +303,7 @@
       "field_name": "date_issued",
       "label": "Date Issued",
       "preset": "date",
+      "required": true,
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which an information resource was originally published or otherwise made publicly available for the first time.",
       "help_inline": false
@@ -308,7 +313,6 @@
       "label": "Date Created",
       "preset": "date",
       "required": true,
-      "validators": "scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which the intellectual content of an information resource is created or compiled.",
       "help_inline": false
@@ -318,7 +322,6 @@
       "label": "Date Modified",
       "preset": "date",
       "required": true,
-      "validators": "scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which an information resource is changed.",
       "help_inline": false
@@ -436,9 +439,17 @@
         {
           "value": "unrestricted",
           "label": "Unrestricted"
+        },
+        {
+          "value": "protected",
+          "label": "Protected"
+        },
+        {
+          "value": "restricted",
+          "label": "Restricted"
         }
-            ],
-            "required": true ,
+      ],
+      "required": true ,
 	  "validators": "scheming_required" 
     },
     {
