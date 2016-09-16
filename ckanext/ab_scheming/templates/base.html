@@ -3,37 +3,7 @@
 {% block styles %}
 {{ super() }}
 {% resource 'ab_scheming/css/ab-forms.css' %}
-{% resource 'ab_scheming/css/jquery-ui.css' %}
-{% resource 'ab_scheming/css/jquery-ui.theme.css' %}
-<style>
-	/* TODO: Quick styling fix to stop alberta theme from causing jquery UI style problems; */
-/*	.ui-datepicker {
-		width: auto !important;
-	}
-*/
-</style>
 {% endblock %}
 {% block scripts %}
 {{ super() }}
-{# {% resource 'ab_scheming/js/jquery-ui.js' %} #}
-{#
-<script type="text/javascript">
-	/* replace all date pickers with jquery UI pickers */
-	document.addEventListener("DOMContentLoaded", 
-		function() { 
-			$("input[type='date']").each(function() { 
-                var $this = $(this)
-                var val = $this.val();
-				$this.removeAttr("type");
-				$this.removeAttr("placeholder");
-                $this.datepicker(); 
-                $this.datepicker("option", "dateFormat", "yy-mm-dd");
-                
-                if (val) {
-                    $this.datepicker('setDate', val);
-                }
-			});
-	});
-</script>
-#}
 {% endblock %}
