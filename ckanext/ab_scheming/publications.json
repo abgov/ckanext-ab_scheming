@@ -397,6 +397,22 @@
     "field_name": "identifier-local", "label": "Local Identifier"
     },
     {
+      "field_name": "published_date",
+      "label": "Publish on this future date.",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource will be automatically published.",
+      "help_inline": false
+    },
+    {
+       "field_name": "review_date",
+       "label": "Review Date",
+       "preset": "date",
+       "form_placeholder": "date_format='%Y-%m-%d'",
+       "help_text": "The date on which an information resource is scheduled for review.",
+       "help_inline": false
+    },
+    {
       "field_name": "createdate",
       "label": "Date Created",
       "preset": "date",
