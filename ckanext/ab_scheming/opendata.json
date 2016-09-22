@@ -30,13 +30,20 @@
 	  "validators": "scheming_required"
     },
     {
-      "field_name": "date_published",
+      "field_name": "published_date",
       "label": "Date Published",
       "preset": "date",
       "validators": "ignore_missing isodate",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which the intellectual content of an information resource is published.",
       "help_inline": false
+    },
+    {
+        "field_name": "next_review_date",
+        "label": "Next Review Date",
+        "preset": "date",
+        "help_text": "The date of the next review",
+        "help_inline":  "false"
     },
     {
       "field_name": "notes",
