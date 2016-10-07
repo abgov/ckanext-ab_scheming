@@ -25,7 +25,7 @@
       "form_placeholder": "A little information about my organization..."
     },
     {
-      "field_name": "url",
+      "field_name": "image_url",
       "preset": "resource_url_upload",
       "label": "Image",
       "validators": "ignore_missing",
@@ -34,7 +34,8 @@
     {
       "field_name": "review_interval",
       "label": "Review Interval",
-      "validators": "ignore_missing natural_number_validator"
+      "validators": "natural_number_validator",
+      "default": "30"
     },
     {
         "field_name": "review_interval_type",
