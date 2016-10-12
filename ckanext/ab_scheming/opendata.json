@@ -36,7 +36,7 @@
       "help_text": "The state of work flow is going to be changed to",
       "help_inline": false,
 	  "required": true,
-	  "validators": "scheming_required",
+	  "validators": "scheming_required ab_scheming_resource_required",
       "preset": "select",
       "choices": [
         {"value": "Draft", "label": "Draft"},
@@ -54,7 +54,9 @@
       "field_name": "last_process_state",
       "label": "Last Process State",
       "help_text": "The last state of work flow",
-      "help_inline": false
+      "help_inline": false,
+      "form_attrs": {"disabled": "disabled",
+                     "style": "background-color:#ddd"}
     },
     {
       "field_name": "reason",
@@ -74,7 +76,7 @@
       "help_text": "A concise narrative of the content of an information resource that includes its purpose and function.",
       "help_inline": false,
       "required": true,
-	  "validators": "scheming_required" 
+	  "validators": "ab_scheming_scheming_required" 
     },
 
     {
@@ -361,7 +363,7 @@
       "label": "Date Created",
       "preset": "date",
       "required": true,
-      "validators": "scheming_required",
+      "validators": "ab_scheming_scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which the intellectual content of an information resource is created or compiled.",
       "help_inline": false
@@ -371,7 +373,7 @@
       "label": "Date Modified",
       "preset": "date",
       "required": true,
-      "validators": "scheming_required",
+      "validators": "ab_scheming_scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which an information resource is changed.",
       "help_inline": false
@@ -505,7 +507,8 @@
     {
       "field_name": "url",
       "label": "URL",
-      "preset": "resource_url_upload"
+      "preset": "resource_url_upload",
+      "validators": "ab_scheming_scheming_required"
     },
     {
       "field_name": "name",

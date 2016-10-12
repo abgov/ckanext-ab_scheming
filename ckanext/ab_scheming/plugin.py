@@ -1,12 +1,15 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import json
-
+from logic import validation
+from helpers import get_pocess_list_not_allow_incomplete
 
 class Ab_SchemingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IFacets, inherit=True)
     plugins.implements(plugins.IPackageController, inherit=True)
+    plugins.implements(plugins.IValidators)
+    plugins.implements(plugins.ITemplateHelpers)
 
     # IConfigurer
 
@@ -31,3 +34,16 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
             pkg_dict['pubtype'] = json.loads(pkg_dict['pubtype'])
             
         return pkg_dict
+    
+    """
+    IValidators
+    """
+    def get_validators(self):
+        return {'ab_scheming_scheming_required': validation.scheming_required,
+                'ab_scheming_resource_required': validation.resource_required}
+
+    """
+    ITemplateHelpers
+    """
+    def get_helpers(self):
+        return {'ab_scheming_process_state_list_not_allow_incomplete': get_pocess_list_not_allow_incomplete}
