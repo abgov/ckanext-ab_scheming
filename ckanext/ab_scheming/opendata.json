@@ -78,7 +78,23 @@
       "required": true,
 	  "validators": "ab_scheming_scheming_required" 
     },
-
+    {
+      "field_name": "creator_user_name",
+      "label": "User of record creation",
+      "form_snippet": "dataset_creator.html",
+      "help_text": "User name of creating this record.",
+      "help_inline": false,
+      "form_attrs": {"disabled": "disabled",
+                     "style": "background-color:#ddd"}
+    },
+    {
+	  "field_name": "maintainers",
+	  "preset": "repeating_text",
+	  "label": "Maintainer",
+	  "form_blanks": 0,
+	  "form_attrs": {"readonly": "readonly",
+                     "style": "background-color:#ddd"}
+	},
     {
       "field_name": "alternatetitle",
       "label": "Alternative Title",
