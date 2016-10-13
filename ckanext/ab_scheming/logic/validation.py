@@ -50,3 +50,4 @@ def resource_required(key, flattened_data, errors, context):
             if not pkg_obj.get("resources") and not re.search('new_resource', toolkit.request.url):
                 # we still allow adding resources in Submitted mode
                 raise Invalid(_("At least one resource must be set up."))
+
