@@ -35,6 +35,9 @@ def scheming_required(key, flattened_data, errors, context):
 def resource_required(key, flattened_data, errors, context):
     """ check resources. If empty, raise error """
     data_dict = unflatten(flattened_data)
+    if not data_dict.get("id"):
+        # if there is no package id, it is in creation mode
+        return
     try:
         pkg_obj = toolkit.get_action("package_show")(data_dict={"id": data_dict['id']})
     except NotFound:
