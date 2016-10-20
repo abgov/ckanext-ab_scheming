@@ -2,7 +2,11 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import json
 from logic import validation
-from helpers import get_pocess_list_not_allow_incomplete
+from helpers import (
+    get_process_state_list_not_allow_incomplete,
+    get_required_fields_name,
+    get_all_process_states
+)
 
 class Ab_SchemingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
@@ -46,4 +50,6 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
     ITemplateHelpers
     """
     def get_helpers(self):
-        return {'ab_scheming_process_state_list_not_allow_incomplete': get_pocess_list_not_allow_incomplete}
+        return {'ab_scheming_process_state_list_not_allow_incomplete': get_process_state_list_not_allow_incomplete,
+                'ab_scheming_get_required_fields_name': get_required_fields_name,
+                'ab_scheming_get_all_process_states': get_all_process_states}

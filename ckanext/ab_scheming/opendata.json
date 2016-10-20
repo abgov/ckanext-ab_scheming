@@ -46,8 +46,11 @@
         {"value": "Rejected", "label": "Rejected"},
         {"value": "Approved", "label": "Approved"}
       ],
-      "form_restrict_choices_to": [
+      "form_decision_restrict_choices_to": [
         "Pending", "Rejected", "Approved"
+      ],
+      "form_not_allow_incomplete_dataset": [
+        "Submitted", "Pending", "Rejected", "Approved"
       ]
     },
     {
