@@ -51,7 +51,14 @@
       ],
       "form_not_allow_incomplete_dataset": [
         "Submitted", "Pending", "Rejected", "Approved"
-      ]
+      ],
+      "form_state_colors": 
+        {"Draft": "#ff9900", 
+         "Modified": "#0066ff", 
+         "Submitted": "#9900cc", 
+         "Pending": "#804000",
+         "Rejected": "#ff3300",
+         "Approved": "#00b300"}
     },
     {
       "field_name": "last_process_state",

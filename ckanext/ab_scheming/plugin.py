@@ -5,7 +5,8 @@ from logic import validation
 from helpers import (
     get_process_state_list_not_allow_incomplete,
     get_required_fields_name,
-    get_all_process_states
+    get_all_process_states,
+    get_process_state_color
 )
 
 class Ab_SchemingPlugin(plugins.SingletonPlugin):
@@ -52,4 +53,5 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
     def get_helpers(self):
         return {'ab_scheming_process_state_list_not_allow_incomplete': get_process_state_list_not_allow_incomplete,
                 'ab_scheming_get_required_fields_name': get_required_fields_name,
-                'ab_scheming_get_all_process_states': get_all_process_states}
+                'ab_scheming_get_all_process_states': get_all_process_states,
+                'ab_scheming_get_process_state_color': get_process_state_color}

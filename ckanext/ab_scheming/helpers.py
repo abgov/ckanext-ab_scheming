@@ -25,3 +25,7 @@ def get_all_process_states():
 	ps = _get_process_state_field()
 	return [ c['value'] for c in ps['choices'] ]
 
+
+def get_process_state_color(state):
+	ps = _get_process_state_field()
+	return ps['form_state_colors'][state]

@@ -36,8 +36,6 @@ def resource_required(key, flattened_data, errors, context):
         abort(404, _('The dataset {id} could not be found.'
                     ).format(id=data_dict['id']))
     else:
-        for k in data_dict.keys():
-            print("{0}:  ".format(k))
         if data_dict['process_state'] in helpers.get_process_state_list_not_allow_incomplete():
             if not pkg_obj.get("resources") and not re.search('new_resource', toolkit.request.url):
                 # we still allow adding resources in Submitted mode
