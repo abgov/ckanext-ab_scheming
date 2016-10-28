@@ -552,6 +552,28 @@
       "label": "Format",
       "preset": "resource_format_autocomplete",
 	  "form_placeholder": "The particular file format or encoding method used in the archiving and/or distribution of an information resource."
+    },
+    ,
+    {
+      "field_name": "classification",
+      "label": "Security Classification",
+      "help_text": "The classification which is used upon this resource",
+      "help_inline": false,
+      "required": true,
+      "validators": "scheming_required",
+      "form_snippet": "classification.html",
+      "choices": [
+        {"value": "1", "label": "1"},
+        {"value": "2", "label": "2"},
+        {"value": "3", "label": "3"},
+        {"value": "4", "label": "4"}
+      ],
+      "form_colors": 
+        {"1": "#ff9900", 
+         "2": "#0066ff", 
+         "3": "#9900cc", 
+         "4": "#804000"
+        } 
     }
   ]
 }
