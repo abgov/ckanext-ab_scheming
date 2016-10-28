@@ -553,7 +553,6 @@
       "preset": "resource_format_autocomplete",
 	  "form_placeholder": "The particular file format or encoding method used in the archiving and/or distribution of an information resource."
     },
-    ,
     {
       "field_name": "classification",
       "label": "Security Classification",
