@@ -1,21 +1,12 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import json
-from logic import validation
-from helpers import (
-    get_process_state_list_not_allow_incomplete,
-    get_required_fields_name,
-    get_all_process_states,
-    get_process_state_color
-)
 
 class Ab_SchemingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IFacets, inherit=True)
     plugins.implements(plugins.IPackageController, inherit=True)
-    plugins.implements(plugins.IValidators)
-    plugins.implements(plugins.ITemplateHelpers)
-
+    
     # IConfigurer
 
     def update_config(self, config_):
@@ -40,18 +31,4 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
             
         return pkg_dict
     
-    """
-    IValidators
-    """
-    def get_validators(self):
-        return {'ab_scheming_scheming_required': validation.scheming_required,
-                'ab_scheming_resource_required': validation.resource_required}
-
-    """
-    ITemplateHelpers
-    """
-    def get_helpers(self):
-        return {'ab_scheming_process_state_list_not_allow_incomplete': get_process_state_list_not_allow_incomplete,
-                'ab_scheming_get_required_fields_name': get_required_fields_name,
-                'ab_scheming_get_all_process_states': get_all_process_states,
-                'ab_scheming_get_process_state_color': get_process_state_color}
+    

@@ -36,7 +36,7 @@
       "help_text": "The state of work flow is going to be changed to",
       "help_inline": false,
 	  "required": true,
-	  "validators": "scheming_required ab_scheming_resource_required",
+	  "validators": "scheming_required ab_ps_resource_required",
       "preset": "select",
       "choices": [
         {"value": "Draft", "label": "Draft"},
@@ -86,12 +86,11 @@
       "help_text": "A concise narrative of the content of an information resource that includes its purpose and function.",
       "help_inline": false,
       "required": true,
-	  "validators": "ab_scheming_scheming_required" 
+	  "validators": "ab_ps_scheming_required" 
     },
     {
       "field_name": "creator_user_name",
       "label": "User of record creation",
-      "form_snippet": "dataset_creator.html",
       "help_text": "User name of creating this record.",
       "help_inline": false,
       "form_attrs": {"disabled": "disabled",
@@ -389,7 +388,7 @@
       "label": "Date Created",
       "preset": "date",
       "required": true,
-      "validators": "ab_scheming_scheming_required",
+      "validators": "ab_ps_scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which the intellectual content of an information resource is created or compiled.",
       "help_inline": false
@@ -399,7 +398,7 @@
       "label": "Date Modified",
       "preset": "date",
       "required": true,
-      "validators": "ab_scheming_scheming_required",
+      "validators": "ab_ps_scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which an information resource is changed.",
       "help_inline": false
@@ -534,7 +533,7 @@
       "field_name": "url",
       "label": "URL",
       "preset": "resource_url_upload",
-      "validators": "ab_scheming_scheming_required"
+      "validators": "ab_ps_scheming_required"
     },
     {
       "field_name": "name",
@@ -565,13 +564,15 @@
         {"value": "1", "label": "1"},
         {"value": "2", "label": "2"},
         {"value": "3", "label": "3"},
-        {"value": "4", "label": "4"}
+        {"value": "4", "label": "4"},
+        {"value": "5", "label": "5"}
       ],
       "form_colors": 
         {"1": "#ff9900", 
          "2": "#0066ff", 
          "3": "#9900cc", 
-         "4": "#804000"
+         "4": "#804000",
+         "5": "#ff3300"
         } 
     }
   ]

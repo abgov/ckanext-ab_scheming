@@ -177,5 +177,4 @@
 <copyField source="maintainer" dest="text"/>
 <copyField source="author" dest="text"/>
 <copyField source="process_state" dest="text"/>
-
 </schema>
