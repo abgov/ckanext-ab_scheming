@@ -10,31 +10,30 @@
       } -%}
 
 {% block package_additional_info %}
-</table>
-<div class="row">
-  {%- for f in details_by_type[dataset_type]["fields"] -%}
-      {%- for field in schema.dataset_fields if field.field_name == f -%}
-        <div class="col-sm-12 col-md-{{details_by_type[dataset_type]["columns"][f]}}">
-          <h4>{{ h.scheming_language_text(field.label) }}</h4>
-          <p>{%- snippet 'scheming/snippets/display_field.html',field=field, data=pkg_dict, schema=schema -%}</p>
-        </div>
+  <div class="row">
+    {%- for f in details_by_type[dataset_type]["fields"] -%}
+        {%- for field in schema.dataset_fields if field.field_name == f -%}
+          <div class="col-sm-12 col-md-{{details_by_type[dataset_type]["columns"][f]}}">
+            <h4>{{ h.scheming_language_text(field.label) }}</h4>
+            <p>{%- snippet 'scheming/snippets/display_field.html',field=field, data=pkg_dict, schema=schema -%}</p>
+          </div>
+      {%- endfor -%}
     {%- endfor -%}
-  {%- endfor -%}
-  
-  <div class="col-sm-12"><h2>Available Fields</h2>
-    <ul>
-        {%- for field in schema.dataset_fields -%}
-        <li>{{field.field_name}} | {{ h.scheming_language_text(field.label) }}<br><pre>{%- snippet 'scheming/snippets/display_field.html',field=field, data=pkg_dict, schema=schema -%}</pre></li>
-        {%- endfor -%}
-    </ul>
-  </div>
-
-
-  {% if h.check_access('package_update',{'id':pkg_dict.id}) %}
-    <div class="col-sm-12">
-      <h4>{{ _("State") }}</h4>
-      <p>{{ _(pkg_dict.state) }}</p>
+    
+    <div class="col-sm-12"><h2>Available Fields</h2>
+      <ul>
+          {%- for field in schema.dataset_fields -%}
+          <li>{{field.field_name}} | {{ h.scheming_language_text(field.label) }}<br><pre>{%- snippet 'scheming/snippets/display_field.html',field=field, data=pkg_dict, schema=schema -%}</pre></li>
+          {%- endfor -%}
+      </ul>
     </div>
-  {% endif %}
+
+
+    {% if h.check_access('package_update',{'id':pkg_dict.id}) %}
+      <div class="col-sm-12">
+        <h4>{{ _("State") }}</h4>
+        <p>{{ _(pkg_dict.state) }}</p>
+      </div>
+    {% endif %}
   </div>
 {% endblock %}

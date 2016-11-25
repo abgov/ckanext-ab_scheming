@@ -12,7 +12,7 @@
       "preset": "title",
 	  "form_placeholder": "Dataset Title",
       "required": true,
-	  "validators": "scheming_required" 
+	  "validators": "scheming_required ab_ps_resource_required" 
     },
     {
       "field_name": "name",
@@ -36,7 +36,7 @@
       "help_text": "The state of work flow is going to be changed to",
       "help_inline": false,
 	  "required": true,
-	  "validators": "scheming_required ab_ps_resource_required",
+	  "validators": "scheming_required",
       "preset": "select",
       "choices": [
         {"value": "Draft", "label": "Draft"},
@@ -51,14 +51,7 @@
       ],
       "form_not_allow_incomplete_dataset": [
         "Submitted", "Pending", "Rejected", "Approved"
-      ],
-      "form_state_colors": 
-        {"Draft": "#ff9900", 
-         "Modified": "#0066ff", 
-         "Submitted": "#9900cc", 
-         "Pending": "#804000",
-         "Rejected": "#ff3300",
-         "Approved": "#00b300"}
+      ]
     },
     {
       "field_name": "last_process_state",
@@ -88,22 +81,6 @@
       "required": true,
 	  "validators": "ab_ps_scheming_required" 
     },
-    {
-      "field_name": "creator_user_name",
-      "label": "User of record creation",
-      "help_text": "User name of creating this record.",
-      "help_inline": false,
-      "form_attrs": {"disabled": "disabled",
-                     "style": "background-color:#ddd"}
-    },
-    {
-	  "field_name": "maintainers",
-	  "preset": "repeating_text",
-	  "label": "Maintainer",
-	  "form_blanks": 0,
-	  "form_attrs": {"readonly": "readonly",
-                     "style": "background-color:#ddd"}
-	},
     {
       "field_name": "alternatetitle",
       "label": "Alternative Title",
@@ -557,8 +534,6 @@
       "label": "Security Classification",
       "help_text": "The classification which is used upon this resource",
       "help_inline": false,
-      "required": true,
-      "validators": "scheming_required",
       "form_snippet": "classification.html",
       "choices": [
         {"value": "1", "label": "1"},
@@ -566,14 +541,7 @@
         {"value": "3", "label": "3"},
         {"value": "4", "label": "4"},
         {"value": "5", "label": "5"}
-      ],
-      "form_colors": 
-        {"1": "#ff9900", 
-         "2": "#0066ff", 
-         "3": "#9900cc", 
-         "4": "#804000",
-         "5": "#ff3300"
-        } 
+      ]
     }
   ]
 }
