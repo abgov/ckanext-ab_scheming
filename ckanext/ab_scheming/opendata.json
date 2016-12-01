@@ -12,7 +12,7 @@
       "preset": "title",
 	  "form_placeholder": "Dataset Title",
       "required": true,
-	  "validators": "scheming_required ab_ps_resource_required" 
+	  "validators": "scheming_required" 
     },
     {
       "field_name": "name",
@@ -36,7 +36,7 @@
       "help_text": "The state of work flow is going to be changed to",
       "help_inline": false,
 	  "required": true,
-	  "validators": "scheming_required",
+	  "validators": "scheming_required ab_ps_resource_required",
       "preset": "select",
       "choices": [
         {"value": "Draft", "label": "Draft"},
