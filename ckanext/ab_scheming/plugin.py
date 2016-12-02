@@ -2,12 +2,11 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import json
 
-
 class Ab_SchemingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IFacets, inherit=True)
     plugins.implements(plugins.IPackageController, inherit=True)
-
+    
     # IConfigurer
 
     def update_config(self, config_):
@@ -31,3 +30,5 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
             pkg_dict['pubtype'] = json.loads(pkg_dict['pubtype'])
             
         return pkg_dict
+    
+    
