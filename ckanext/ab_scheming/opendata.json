@@ -69,7 +69,21 @@
       "help_text": "Reason of rejected state of work flow",
       "help_inline": false,
       "required": true,
-	  "validators": "scheming_required" 
+      "validators": "scheming_required" 
+    },
+    {
+      "field_name": "published_date",
+      "label": "Published Date",
+      "preset": "date",
+      "help_text": "The date on which the intellectual content of an information resource is published.",
+      "help_inline": false
+    },
+    {
+        "field_name": "next_review_date",
+        "label": "Next Review Date",
+        "preset": "date",
+        "help_text": "The date of the next review",
+        "help_inline":  false
     },
     {
       "field_name": "notes",
@@ -520,6 +534,7 @@
       "field_name": "date_issued",
       "label": "Date Issued",
       "preset": "date",
+      "required": true,
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which an information resource was originally published or otherwise made publicly available for the first time.",
       "help_inline": false
@@ -657,9 +672,17 @@
         {
           "value": "unrestricted",
           "label": "Unrestricted"
+        },
+        {
+          "value": "protected",
+          "label": "Protected"
+        },
+        {
+          "value": "restricted",
+          "label": "Restricted"
         }
-            ],
-            "required": true ,
+      ],
+      "required": true ,
 	  "validators": "scheming_required" 
     },
     {
