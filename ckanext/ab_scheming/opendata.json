@@ -707,9 +707,17 @@
         {
           "value": "unrestricted",
           "label": "Unrestricted"
+        },
+        {
+          "value": "protected",
+          "label": "Protected"
+        },
+        {
+          "value": "restricted",
+          "label": "Restricted"
         }
-            ],
-            "required": true ,
+      ],
+      "required": true ,
 	  "validators": "scheming_required" 
     },
     {
