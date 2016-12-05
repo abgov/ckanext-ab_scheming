@@ -21,86 +21,65 @@
       "form_placeholder": "eg. my-dataset"
     },
     {
-      "field_name": "owner_org",
-      "label": "Publisher",
-      "help_text": "The business entity responsible for making an information resource publicly available.",
-      "help_inline": false,
-      "preset": "dataset_organization",
-	  "required": true,
-	  "validators": "scheming_required"
-    },
-    {
-      "field_name": "process_state",
-      "label": "Change to Process State",
-      "form_snippet": "process_state.html",
-      "help_text": "The state of work flow is going to be changed to",
-      "help_inline": false,
-	  "required": true,
-	  "validators": "scheming_required ab_ps_resource_required",
-      "preset": "select",
-      "choices": [
-        {"value": "Draft", "label": "Draft"},
-        {"value": "Modified", "label": "Modified"},
-        {"value": "Submitted", "label": "Submitted"},
-        {"value": "Pending", "label": "Pending"},
-        {"value": "Rejected", "label": "Rejected"},
-        {"value": "Approved", "label": "Approved"}
-      ],
-      "form_decision_restrict_choices_to": [
-        "Pending", "Rejected", "Approved"
-      ],
-      "form_not_allow_incomplete_dataset": [
-        "Submitted", "Pending", "Rejected", "Approved"
-      ]
-    },
-    {
-      "field_name": "last_process_state",
-      "label": "Last Process State",
-      "help_text": "The last state of work flow",
-      "help_inline": false,
-      "form_attrs": {"disabled": "disabled",
-                     "style": "background-color:#ddd"}
-    },
-    {
-      "field_name": "reason",
-      "label": "Rejected Reason",
-      "form_snippet": "markdown.html",
-	  "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
-      "help_text": "Reason of rejected state of work flow",
-      "help_inline": false,
-      "required": true,
-      "validators": "scheming_required" 
-    },
-    {
-      "field_name": "published_date",
-      "label": "Published Date",
-      "preset": "date",
-      "help_text": "The date on which the intellectual content of an information resource is published.",
-      "help_inline": false
-    },
-    {
-        "field_name": "next_review_date",
-        "label": "Next Review Date",
-        "preset": "date",
-        "help_text": "The date of the next review",
-        "help_inline":  false
-    },
-    {
-      "field_name": "notes",
-      "label": "Description",
-      "form_snippet": "markdown.html",
-	  "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
-      "help_text": "A concise narrative of the content of an information resource that includes its purpose and function.",
-      "help_inline": false,
-      "required": true,
-	  "validators": "ab_ps_scheming_required" 
-    },
-    {
       "field_name": "alternatetitle",
       "label": "Alternative Title",
       "help_text": "An alternative name used as a substitute or additional access point for an information resource.",
       "help_inline": false,
       "form_placeholder": "eg. An Alternative Title"
+    },
+    {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
+      "help_text": "A concise narrative of the content of an information resource that includes its purpose and function.",
+      "help_inline": false,
+      "required": true,
+      "validators": "ab_ps_scheming_required" 
+    },
+    {
+      "field_name": "type",
+      "label": "Dataset Type",
+      "help_text": "Dataset type",
+      "help_inline": false,
+      "form_attrs": {"disabled": "disabled",
+                     "style": "background-color:#ddd"}
+    },
+    {
+      "field_name": "topic",
+      "label": "Topic",
+      "help_text": "A controlled term that expresses the broad topical content of an information resource.",
+      "help_inline": false,
+      "preset": "multiple_select",
+      "choices": [
+        {"value": "Aboriginal Peoples", "label": "Aboriginal Peoples"},
+        {"value": "Agriculture", "label": "Agriculture"},
+        {"value": "Arts, Culture and History", "label": "Arts, Culture and History"},
+        {"value": "Business and Industry", "label": "Business and Industry"},
+        {"value": "Economy and Finance", "label": "Economy and Finance"},
+        {"value": "Education - Adult and Continuing", "label": "Education - Adult and Continuing"},
+        {"value": "Education - Early Childhood to Grade 12", "label": "Education - Early Childhood to Grade 12"},
+        {"value": "Education - Post - Secondary and Skills Training", "label": "Education - Post-Secondary and Skills Training"},
+        {"value": "Employment and Labour", "label": "Employment and Labour"},
+        {"value": "Energy and Natural Resources", "label": "Energy and Natural Resources"},
+        {"value": "Environment", "label": "Environment"},
+        {"value": "Families and Children", "label": "Families and Children"},
+        {"value": "Government", "label": "Government"},
+        {"value": "Health and Wellness", "label": "Health and Wellness"},
+        {"value": "Housing and Utilities", "label": "Housing and Utilities"},
+        {"value": "Immigration and Migration", "label": "Immigration and Migration"},
+        {"value": "Interprovincial and International Affairs", "label": "Interprovincial and International Affairs"},
+        {"value": "Laws and Justice", "label": "Laws and Justice"},
+        {"value": "Persons with Disabilities", "label": "Persons with Disabilities"},
+        {"value": "Population and Demography", "label": "Population and Demography"},
+        {"value": "Roads, Driving and Transport", "label": "Roads, Driving and Transport"},
+        {"value": "Safety and Emergency Services", "label": "Safety and Emergency Services"},
+        {"value": "Science, Technology and Innovation", "label": "Science, Technology and Innovation"},
+        {"value": "Seniors", "label": "Seniors"},
+        {"value": "Society and Communities", "label": "Society and Communities"},
+        {"value": "Sports and Recreation", "label": "Sports and Recreation"},
+        {"value": "Tourism & Parks", "label": "Tourism & Parks"}
+        ]
     },
     {
       "field_name": "creator",
@@ -417,127 +396,13 @@
       ]
     },
     {
-      "field_name": "contact",
-      "label": "Contact Name",
-      "form_placeholder": "name (personal, role name, branch, etc.)",
-      "display_property": "dc:contact",
-      "help_text": "The organizational contact for users of the Open Government Portal to obtain further information or provide feedback about an information resource or its metadata.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contact_email",
-      "label": "Contact Email",
-      "form_placeholder": "opendata@gov.ab.ca",
-      "display_property": "dc:creator",
-      "display_snippet": "email.html",
-      "display_email_name_field": "author"
-    },
-    {
-      "field_name": "contactother",
-      "label": "Contact Other",
-      "form_snippet": "markdown.html",
-      "form_placeholder": "Contact Other"
-    },
-    {
-      "field_name": "identifier",
-      "label": "External Identifier",
-      "help_text": "If this dataset is coming from another system, you can use this field to specify its unique identifier within that system. Automated updates between systems will then use this field to locate this dataset. If you do not have the identifier from the other system, or do not know what value to use here, leave this blank.",
-      "help_inline": false
-    },
-    {
-      "field_name": "updatefrequency",
-      "label": "Update Frequency",
-      "help_text": "The time interval in which new or updated versions of an information resource are issued.",
+      "field_name": "owner_org",
+      "label": "Publisher",
+      "help_text": "The business entity responsible for making an information resource publicly available.",
       "help_inline": false,
-	  "required": true,
-	  "validators": "scheming_required",
-      "preset": "select",
-      "choices": [
-        {"value": "Once", "label": "Once"},
-        {"value": "Daily", "label": "Daily"},
-        {"value": "Weekly", "label": "Weekly"},
-        {"value": "Every 2 weeks", "label": "Every 2 weeks"},
-        {"value": "Twice monthly", "label": "Twice monthly"},
-        {"value": "Monthly", "label": "Monthly"},
-        {"value": "Every 2 months", "label": "Every 2 months"},
-        {"value": "Quarterly", "label": "Quarterly (every 3 months)"},
-        {"value": "Every 4 months", "label": "Every 4 months"},
-        {"value": "Semi-annual", "label": "Semi-annual (every 6 months)"},
-        {"value": "Annual", "label": "Annual"},
-        {"value": "Biennial", "label": "Biennial (every 2 years)"},
-        {"value": "Every 5 years", "label": "Every 5 years"},
-        {"value": "Irregular", "label": "Irregular"},
-        {"value": "Other", "label": "Other"} 
-      ]
-    },
-    {
-      "field_name": "topic",
-      "label": "Topic",
-	  "help_text": "A controlled term that expresses the broad topical content of an information resource.",
-      "help_inline": false,
-      "preset": "multiple_select",
-      "choices": [
-        {"value": "Aboriginal Peoples", "label": "Aboriginal Peoples"},
-        {"value": "Agriculture", "label": "Agriculture"},
-        {"value": "Arts, Culture and History", "label": "Arts, Culture and History"},
-        {"value": "Business and Industry", "label": "Business and Industry"},
-        {"value": "Economy and Finance", "label": "Economy and Finance"},
-        {"value": "Education - Adult and Continuing", "label": "Education - Adult and Continuing"},
-        {"value": "Education - Early Childhood to Grade 12", "label": "Education - Early Childhood to Grade 12"},
-        {"value": "Education - Post - Secondary and Skills Training", "label": "Education - Post-Secondary and Skills Training"},
-        {"value": "Employment and Labour", "label": "Employment and Labour"},
-        {"value": "Energy and Natural Resources", "label": "Energy and Natural Resources"},
-        {"value": "Environment", "label": "Environment"},
-        {"value": "Families and Children", "label": "Families and Children"},
-        {"value": "Government", "label": "Government"},
-        {"value": "Health and Wellness", "label": "Health and Wellness"},
-        {"value": "Housing and Utilities", "label": "Housing and Utilities"},
-        {"value": "Immigration and Migration", "label": "Immigration and Migration"},
-        {"value": "Interprovincial and International Affairs", "label": "Interprovincial and International Affairs"},
-        {"value": "Laws and Justice", "label": "Laws and Justice"},
-        {"value": "Persons with Disabilities", "label": "Persons with Disabilities"},
-        {"value": "Population and Demography", "label": "Population and Demography"},
-        {"value": "Roads, Driving and Transport", "label": "Roads, Driving and Transport"},
-        {"value": "Safety and Emergency Services", "label": "Safety and Emergency Services"},
-        {"value": "Science, Technology and Innovation", "label": "Science, Technology and Innovation"},
-        {"value": "Seniors", "label": "Seniors"},
-        {"value": "Society and Communities", "label": "Society and Communities"},
-        {"value": "Sports and Recreation", "label": "Sports and Recreation"},
-        {"value": "Tourism & Parks", "label": "Tourism & Parks"}
-        ]
-    },
-    {
-      "field_name": "tag_string",
-      "label": "Tags",
-      "preset": "tag_string_autocomplete",
-      "form_placeholder": "eg. economy, mental health, government",
-      "help_text": "Uncontrolled terms (words or phrases) assigned to describe an information resource to assist discovery and retrieval.",
-      "help_inline": false
-    },
-    {
-      "field_name": "published_date",
-      "label": "Publish on this future date.",
-      "preset": "date",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date on which an information resource will be automatically published.",
-      "help_inline": false
-    },  
-    {
-      "field_name": "review_date",
-      "label": "Review Date",
-      "preset": "date",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date on which an information resource is scheduled for review.",
-      "help_inline": false
-    },
-    {
-      "field_name": "date_issued",
-      "label": "Date Issued",
-      "preset": "date",
-      "required": true,
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date on which an information resource was originally published or otherwise made publicly available for the first time.",
-      "help_inline": false
+      "preset": "dataset_organization",
+	    "required": true,
+	    "validators": "scheming_required"
     },
     {
       "field_name": "date_created",
@@ -560,26 +425,51 @@
       "help_inline": false
     },
     {
-      "field_name": "time_coverage_from",
-      "label": "Start Date",
+      "field_name": "date_metadata_created",
+      "label": "Date Metadata Created",
       "preset": "date",
+      "required": true,
+      "validators": "ab_ps_scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The time frame covered by the data contained in a dataset.",
+      "help_text": "The date on which dataset metadata is created or compiled.",
       "help_inline": false
     },
     {
-      "field_name": "time_coverage_to",
-      "label": "End Date",
+      "field_name": "date_metadata_modified",
+      "label": "Date Metadata Modified",
       "preset": "date",
+      "required": true,
+      "validators": "ab_ps_scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The time frame covered by the data contained in a dataset.",
+      "help_text": "The date on which dataset metadata is changed.",
       "help_inline": false
     },
     {
-      "field_name": "spatialcoverage1",
-      "label": "Spatial Coverage",
-      "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
+      "field_name": "date_add_to_catalogue",
+      "label": "Date Add to Catalogue",
+      "preset": "date",
+      "required": true,
+      "validators": "ab_ps_scheming_required",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which data is added to catalogue.",
       "help_inline": false
+    },
+    {
+      "field_name": "archive_date",
+      "label": "Date Archived",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date at which an information resource should be identified as an archive copy in the Open Government Portal.",
+      "help_inline": false
+    },
+    {
+      "field_name": "license_id",
+      "label": "Licence",
+      "form_snippet": "license.html",
+      "help_text": "Reference to the legal document outlining access and usage rights for an information resource.",
+      "help_inline": false,
+      "required": true ,
+      "validators": "scheming_required" 
     },
     {
       "field_name": "usage",
@@ -588,6 +478,50 @@
             "form_placeholder": "Usage Considerations",
             "help_text": "Description of factors that support the effective interpretation and use of the information resource.",
             "help_inline": false
+    },
+    {
+      "field_name": "spatialcoverage1",
+      "label": "Spatial Coverage",
+      "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
+      "help_inline": false
+    },
+    {
+      "field_name": "temporalcoverage1",
+      "label": "Temporal Coverage",
+      "help_text": "A temporal extent covered by the content of an information resource.",
+      "help_inline": false
+    },
+    {
+      "field_name": "updatefrequency",
+      "label": "Update Frequency",
+      "help_text": "The time interval in which new or updated versions of an information resource are issued.",
+      "help_inline": false,
+      "required": true,
+      "validators": "scheming_required",
+      "preset": "select",
+      "choices": [
+        {"value": "Once", "label": "Once"},
+        {"value": "Daily", "label": "Daily"},
+        {"value": "Weekly", "label": "Weekly"},
+        {"value": "Every 2 weeks", "label": "Every 2 weeks"},
+        {"value": "Twice monthly", "label": "Twice monthly"},
+        {"value": "Monthly", "label": "Monthly"},
+        {"value": "Every 2 months", "label": "Every 2 months"},
+        {"value": "Quarterly", "label": "Quarterly (every 3 months)"},
+        {"value": "Every 4 months", "label": "Every 4 months"},
+        {"value": "Semi-annual", "label": "Semi-annual (every 6 months)"},
+        {"value": "Annual", "label": "Annual"},
+        {"value": "Biennial", "label": "Biennial (every 2 years)"},
+        {"value": "Every 5 years", "label": "Every 5 years"},
+        {"value": "Irregular", "label": "Irregular"},
+        {"value": "Other", "label": "Other"} 
+      ]
+    },
+    {
+      "field_name": "keywords",
+      "label": "Keywords",
+      "help_text": "Keywords of this dataset.",
+      "help_inline": false
     },
     {
       "field_name": "audience",
@@ -626,21 +560,7 @@
         {"value": "Travellers", "label": "Travellers"},
         {"value": "Visitors to Alberta", "label": "Visitors to Alberta"},
         {"value": "Youth", "label": "Youth"}
-		]
-    },
-    {
-      "field_name": "extent1",
-      "label": "Extent",
-      "help_text": "The size in KB or MB of the information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "archive_date",
-      "label": "Date Archived",
-      "preset": "date",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date at which an information resource should be identified as an archive copy in the Open Government Portal.",
-	  "help_inline": false
+      ]
     },
     {
       "field_name": "language",
@@ -654,13 +574,128 @@
       ]
     },
     {
-      "field_name": "license_id",
-      "label": "Licence",
-	  "form_snippet": "license.html",
-	  "help_text": "Reference to the legal document outlining access and usage rights for an information resource.",
+      "field_name": "identifier",
+      "label": "External Identifier",
+      "help_text": "If this dataset is coming from another system, you can use this field to specify its unique identifier within that system. Automated updates between systems will then use this field to locate this dataset. If you do not have the identifier from the other system, or do not know what value to use here, leave this blank.",
+      "help_inline": false
+    },
+    {
+      "field_name": "contact",
+      "label": "Contact Name",
+      "form_placeholder": "name (personal, role name, branch, etc.)",
+      "display_property": "dc:contact",
+      "help_text": "The organizational contact for users of the Open Government Portal to obtain further information or provide feedback about an information resource or its metadata.",
+      "help_inline": false
+    },
+    {
+      "field_name": "contact_email",
+      "label": "Contact Email",
+      "form_placeholder": "opendata@gov.ab.ca",
+      "display_property": "dc:creator",
+      "display_snippet": "email.html",
+      "display_email_name_field": "author"
+    },
+    {
+      "field_name": "contactother",
+      "label": "Contact Other",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Contact Other"
+    },
+    {
+      "field_name": "process_state",
+      "label": "Change to Process State",
+      "form_snippet": "process_state.html",
+      "help_text": "The state of work flow is going to be changed to",
       "help_inline": false,
-      "required": true ,
+	    "required": true,
+	    "validators": "scheming_required ab_ps_resource_required",
+      "preset": "select",
+      "choices": [
+        {"value": "Draft", "label": "Draft"},
+        {"value": "Modified", "label": "Modified"},
+        {"value": "Submitted", "label": "Submitted"},
+        {"value": "Pending", "label": "Pending"},
+        {"value": "Rejected", "label": "Rejected"},
+        {"value": "Approved", "label": "Approved"}
+      ],
+      "form_decision_restrict_choices_to": [
+        "Pending", "Rejected", "Approved"
+      ],
+      "form_not_allow_incomplete_dataset": [
+        "Submitted", "Pending", "Rejected", "Approved"
+      ]
+    },
+    {
+      "field_name": "last_process_state",
+      "label": "Last Process State",
+      "help_text": "The last state of work flow",
+      "help_inline": false,
+      "form_attrs": {"disabled": "disabled",
+                     "style": "background-color:#ddd"}
+    },
+    {
+      "field_name": "reason",
+      "label": "Rejected Reason",
+      "form_snippet": "markdown.html",
+	  "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
+      "help_text": "Reason of rejected state of work flow",
+      "help_inline": false,
+      "required": true,
 	  "validators": "scheming_required" 
+    },
+    {
+      "field_name": "tag_string",
+      "label": "Tags",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "eg. economy, mental health, government",
+      "help_text": "Uncontrolled terms (words or phrases) assigned to describe an information resource to assist discovery and retrieval.",
+      "help_inline": false
+    },
+    {
+      "field_name": "published_date",
+      "label": "Publish on this future date.",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource will be automatically published.",
+      "help_inline": false
+    },  
+    {
+      "field_name": "review_date",
+      "label": "Review Date",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource is scheduled for review.",
+      "help_inline": false
+    },
+    {
+      "field_name": "date_issued",
+      "label": "Date Issued",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource was originally published or otherwise made publicly available for the first time.",
+      "help_inline": false
+    },
+    {
+      "field_name": "time_coverage_from",
+      "label": "Start Date",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The time frame covered by the data contained in a dataset.",
+      "help_inline": false
+    },
+    {
+      "field_name": "time_coverage_to",
+      "label": "End Date",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The time frame covered by the data contained in a dataset.",
+      "help_inline": false
+    },
+    {
+      "field_name": "extent1",
+      "label": "Extent",
+      "help_text": "The size in KB or MB of the information resource.",
+      "help_inline": false
     },
     {
       "field_name": "sensitivity",
@@ -694,12 +729,6 @@
   ],
   "resource_fields": [
     {
-      "field_name": "url",
-      "label": "URL",
-      "preset": "resource_url_upload",
-      "validators": "ab_ps_scheming_required"
-    },
-    {
       "field_name": "name",
       "label": "Name",
       "form_placeholder": "eg. January 2011 Gold Prices"
@@ -711,10 +740,10 @@
       "form_placeholder": "Some useful notes about the data"
     },
     {
-      "field_name": "format",
-      "label": "Format",
-      "preset": "resource_format_autocomplete",
-	  "form_placeholder": "The particular file format or encoding method used in the archiving and/or distribution of an information resource."
+      "field_name": "url",
+      "label": "URL",
+      "preset": "resource_url_upload",
+      "validators": "ab_ps_scheming_required"
     },
     {
       "field_name": "classification",
@@ -729,6 +758,33 @@
         {"value": "4", "label": "4"},
         {"value": "5", "label": "5"}
       ]
+    },
+    {
+      "field_name": "format",
+      "label": "Format",
+      "preset": "resource_format_autocomplete",
+	    "form_placeholder": "The particular file format or encoding method used in the archiving and/or distribution of an information resource."
+    },
+    {
+      "field_name": "file_size",
+      "label": "File size",
+      "help_text": "File size of resource",
+      "help_inline": false,
+      "form_placeholder": "File size of an information resource."
+    },
+    {
+      "field_name": "extent",
+      "label": "File extent",
+      "help_text": "Duration of audio or video of resource",
+      "help_inline": false,
+      "form_placeholder": "Duration of audio or video of resource."
+    },
+    {
+      "field_name": "medium",
+      "label": "Medium",
+      "help_text": "Medium of resource",
+      "help_inline": false,
+      "form_placeholder": "Medium of resource."
     }
   ]
 }
