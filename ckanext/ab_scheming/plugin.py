@@ -17,8 +17,8 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
     def dataset_facets(self, facets_dict, package_type):
         facets_dict['dataset_type'] = plugins.toolkit._('Information Type')
         facets_dict['groups'] = plugins.toolkit._('Topics')
-        #facets_dict['audience'] = plugins.toolkit._('Audience')
-        #facets_dict['pubtype'] = plugins.toolkit._('Publication Type')
+        facets_dict['audience'] = plugins.toolkit._('Audience')
+        facets_dict['pubtype'] = plugins.toolkit._('Publication Type')
         return facets_dict
         
     def before_index(self, pkg_dict):
