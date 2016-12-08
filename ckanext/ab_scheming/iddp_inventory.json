@@ -692,29 +692,6 @@
       "help_inline": false
     },
     {
-      "field_name": "sensitivity",
-      "label": "Sensitivity",
-      "help_text": "An information security designation that identifies the minimum level of protection assigned to an information resource.",
-      "help_inline": false,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "unrestricted",
-          "label": "Unrestricted"
-        },
-        {
-          "value": "protected",
-          "label": "Protected"
-        },
-        {
-          "value": "restricted",
-          "label": "Restricted"
-        }
-      ],
-      "required": true ,
-	  "validators": "scheming_required" 
-    },
-    {
       "field_name": "source_type",
       "label": "Import Source",
       "help_text": "This will field will be auto populated by an import script. eg. GeoDiscover",
