@@ -524,12 +524,6 @@
       ]
     },
     {
-      "field_name": "keywords",
-      "label": "Keywords",
-      "help_text": "Keywords of this dataset.",
-      "help_inline": false
-    },
-    {
       "field_name": "audience",
       "label": "Audience",
       "help_text": "A group of people for whom an information resource is intended or useful.",
@@ -870,12 +864,9 @@
       "help_text": "The date, or date and time, on which an information resource was originally published or otherwise made publicly available for the first time.",
       "help_inline": false
     },
-    
-    
-    
     {
       "field_name": "tag_string",
-      "label": "Tags",
+      "label": "Keywords",
       "preset": "tag_string_autocomplete",
       "form_placeholder": "eg. economy, mental health, government",
       "help_text": "Uncontrolled terms (words or phrases) assigned to describe an information resource to assist discovery and retrieval.",
