@@ -49,14 +49,6 @@
       "form_placeholder": "eg. Some useful notes about this publication"
     },
     {
-      "field_name": "type",
-      "label": "Dataset Type",
-      "help_text": "Dataset type",
-      "help_inline": false,
-      "form_attrs": {"disabled": "disabled",
-                     "style": "background-color:#ddd"}
-    },
-    {
       "field_name": "topic",
       "label": "Topic",
       "help_text": "A controlled term that expresses the broad topical content of an information resource.",
@@ -434,33 +426,6 @@
       "help_inline": false
     },
     {
-      "field_name": "date_metadata_created",
-      "label": "Date Metadata Created",
-      "preset": "date",
-      "help_text": "The date, or date and time, on which metadata is created or compiled.",
-      "required": true,
-      "validators": "ab_ps_scheming_required",
-      "help_inline": false
-    },
-    {
-      "field_name": "date_metadata_modified",
-      "label": "Date Metadata Modified",
-      "preset": "date",
-      "help_text": "The date, or date and time, on which metadata is changed.",
-      "required": true,
-      "validators": "ab_ps_scheming_required",
-      "help_inline": false
-    },
-    {
-      "field_name": "date_add_to_catalogue",
-      "label": "Date Add to Catalogue",
-      "preset": "date",
-      "help_text": "The date, or date and time, on which data is added to catalogue.",
-      "required": true,
-      "validators": "ab_ps_scheming_required",
-      "help_inline": false
-    },
-    {
       "field_name": "archive_date",
       "label": "Date Archived",
       "preset": "date",
@@ -522,12 +487,6 @@
           {"value": "Irregular", "label": "Irregular"},
           {"value": "Other", "label": "Other"} 
       ]
-    },
-    {
-      "field_name": "keywords",
-      "label": "Keywords",
-      "help_text": "Keywords of this dataset.",
-      "help_inline": false
     },
     {
       "field_name": "audience",
@@ -870,12 +829,9 @@
       "help_text": "The date, or date and time, on which an information resource was originally published or otherwise made publicly available for the first time.",
       "help_inline": false
     },
-    
-    
-    
     {
       "field_name": "tag_string",
-      "label": "Tags",
+      "label": "Keywords",
       "preset": "tag_string_autocomplete",
       "form_placeholder": "eg. economy, mental health, government",
       "help_text": "Uncontrolled terms (words or phrases) assigned to describe an information resource to assist discovery and retrieval.",

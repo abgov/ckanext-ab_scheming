@@ -1,8 +1,8 @@
 {
   "scheming_version": 1,
-  "dataset_type": "opendata",
+  "dataset_type": "dataset",
   "about": "A reimplementation of the default CKAN dataset schema",
-  "about_url": "http://open.alberta.ca/opendata",
+  "about_url": "http://open.alberta.ca/dataset",
   "dataset_fields": [
     {
       "field_name": "title",
@@ -652,29 +652,6 @@
       "label": "Extent",
       "help_text": "The size in KB or MB of the information resource.",
       "help_inline": false
-    },
-    {
-      "field_name": "sensitivity",
-      "label": "Sensitivity",
-      "help_text": "An information security designation that identifies the minimum level of protection assigned to an information resource.",
-      "help_inline": false,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "unrestricted",
-          "label": "Unrestricted"
-        },
-        {
-          "value": "protected",
-          "label": "Protected"
-        },
-        {
-          "value": "restricted",
-          "label": "Restricted"
-        }
-      ],
-      "required": true ,
-	  "validators": "scheming_required" 
     },
     {
       "field_name": "source_type",

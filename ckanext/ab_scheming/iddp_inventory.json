@@ -1,8 +1,8 @@
 {
   "scheming_version": 1,
-  "dataset_type": "opendata",
+  "dataset_type": "inventory",
   "about": "A reimplementation of the default CKAN dataset schema",
-  "about_url": "http://open.alberta.ca/opendata",
+  "about_url": "http://open.alberta.ca/inventory",
   "dataset_fields": [
     {
       "field_name": "title",
@@ -564,7 +564,7 @@
       "help_text": "The state of work flow is going to be changed to",
       "help_inline": false,
 	    "required": true,
-	    "validators": "scheming_required ab_ps_resource_required",
+	    "validators": "scheming_required",
       "preset": "select",
       "choices": [
         {"value": "Draft", "label": "Draft"},
@@ -654,29 +654,6 @@
       "help_inline": false
     },
     {
-      "field_name": "sensitivity",
-      "label": "Sensitivity",
-      "help_text": "An information security designation that identifies the minimum level of protection assigned to an information resource.",
-      "help_inline": false,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "unrestricted",
-          "label": "Unrestricted"
-        },
-        {
-          "value": "protected",
-          "label": "Protected"
-        },
-        {
-          "value": "restricted",
-          "label": "Restricted"
-        }
-      ],
-      "required": true ,
-	  "validators": "scheming_required" 
-    },
-    {
       "field_name": "source_type",
       "label": "Import Source",
       "help_text": "This will field will be auto populated by an import script. eg. GeoDiscover",
@@ -684,63 +661,5 @@
     }
   ],
   "resource_fields": [
-    {
-      "field_name": "name",
-      "label": "Name",
-      "form_placeholder": "eg. January 2011 Gold Prices"
-    },
-    {
-      "field_name": "description",
-      "label": "Description",
-      "form_snippet": "markdown.html",
-      "form_placeholder": "Some useful notes about the data"
-    },
-    {
-      "field_name": "url",
-      "label": "URL",
-      "preset": "resource_url_upload",
-      "validators": "ab_ps_scheming_required"
-    },
-    {
-      "field_name": "classification",
-      "label": "Security Classification",
-      "help_text": "The classification which is used upon this resource",
-      "help_inline": false,
-      "form_snippet": "classification.html",
-      "choices": [
-        {"value": "1", "label": "1"},
-        {"value": "2", "label": "2"},
-        {"value": "3", "label": "3"},
-        {"value": "4", "label": "4"},
-        {"value": "5", "label": "5"}
-      ]
-    },
-    {
-      "field_name": "format",
-      "label": "Format",
-      "preset": "resource_format_autocomplete",
-	    "form_placeholder": "The particular file format or encoding method used in the archiving and/or distribution of an information resource."
-    },
-    {
-      "field_name": "file_size",
-      "label": "File size",
-      "help_text": "File size of resource",
-      "help_inline": false,
-      "form_placeholder": "File size of an information resource."
-    },
-    {
-      "field_name": "extent",
-      "label": "File extent",
-      "help_text": "Duration of audio or video of resource",
-      "help_inline": false,
-      "form_placeholder": "Duration of audio or video of resource."
-    },
-    {
-      "field_name": "medium",
-      "label": "Medium",
-      "help_text": "Medium of resource",
-      "help_inline": false,
-      "form_placeholder": "Medium of resource."
-    }
   ]
 }
