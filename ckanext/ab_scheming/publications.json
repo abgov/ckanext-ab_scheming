@@ -416,6 +416,16 @@
       "help_inline": false
     },
     {
+      "field_name": "group",
+      "label": "Group Topics",
+      "form_snippet": "topics.html",
+      "help_text": "The group topics",
+      "help_inline": false,
+      "required": true,
+      "validators": "scheming_required",
+      "preset": "multiple_select"
+    },
+    {
       "field_name": "date_created",
       "label": "Date Created",
       "preset": "date",

@@ -1,12 +1,17 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import json
+import ckanext.ab_scheming.helpers as helpers
+from ckanext.ab_scheming.logic import action
 
 class Ab_SchemingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IFacets, inherit=True)
     plugins.implements(plugins.IPackageController, inherit=True)
-    
+    plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IActions)
+
+
     # IConfigurer
 
     def update_config(self, config_):
@@ -30,5 +35,23 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
             pkg_dict['pubtype'] = json.loads(pkg_dict['pubtype'])
             
         return pkg_dict
+
+    """
+    ITemplateHelpers
+    """
+    def get_helpers(self):
+        return {
+            'topics_available': helpers.topics_available
+        }
+
+    """
+    IAction
+    """
+    def get_actions(self):
+        actions = dict((name, function) for name, function
+                       in action.__dict__.items()
+                       if callable(function))
+        return actions
+    
     
     
