@@ -49,14 +49,6 @@
       "form_placeholder": "eg. Some useful notes about this publication"
     },
     {
-      "field_name": "type",
-      "label": "Dataset Type",
-      "help_text": "Dataset type",
-      "help_inline": false,
-      "form_attrs": {"disabled": "disabled",
-                     "style": "background-color:#ddd"}
-    },
-    {
       "field_name": "topic",
       "label": "Topic",
       "help_text": "A controlled term that expresses the broad topical content of an information resource.",
