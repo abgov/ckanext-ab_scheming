@@ -426,33 +426,6 @@
       "help_inline": false
     },
     {
-      "field_name": "date_metadata_created",
-      "label": "Date Metadata Created",
-      "preset": "date",
-      "help_text": "The date, or date and time, on which metadata is created or compiled.",
-      "required": true,
-      "validators": "ab_ps_scheming_required",
-      "help_inline": false
-    },
-    {
-      "field_name": "date_metadata_modified",
-      "label": "Date Metadata Modified",
-      "preset": "date",
-      "help_text": "The date, or date and time, on which metadata is changed.",
-      "required": true,
-      "validators": "ab_ps_scheming_required",
-      "help_inline": false
-    },
-    {
-      "field_name": "date_add_to_catalogue",
-      "label": "Date Add to Catalogue",
-      "preset": "date",
-      "help_text": "The date, or date and time, on which data is added to catalogue.",
-      "required": true,
-      "validators": "ab_ps_scheming_required",
-      "help_inline": false
-    },
-    {
       "field_name": "archive_date",
       "label": "Date Archived",
       "preset": "date",

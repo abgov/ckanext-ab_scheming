@@ -417,36 +417,6 @@
       "help_inline": false
     },
     {
-      "field_name": "date_metadata_created",
-      "label": "Date Metadata Created",
-      "preset": "date",
-      "required": true,
-      "validators": "ab_ps_scheming_required",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date on which dataset metadata is created or compiled.",
-      "help_inline": false
-    },
-    {
-      "field_name": "date_metadata_modified",
-      "label": "Date Metadata Modified",
-      "preset": "date",
-      "required": true,
-      "validators": "ab_ps_scheming_required",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date on which dataset metadata is changed.",
-      "help_inline": false
-    },
-    {
-      "field_name": "date_add_to_catalogue",
-      "label": "Date Add to Catalogue",
-      "preset": "date",
-      "required": true,
-      "validators": "ab_ps_scheming_required",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date on which data is added to catalogue.",
-      "help_inline": false
-    },
-    {
       "field_name": "archive_date",
       "label": "Date Archived",
       "preset": "date",
