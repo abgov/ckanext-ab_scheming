@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import ckan.logic as logic
 import ckan.authz as authz
 import ckan.model as model
@@ -49,7 +51,7 @@ def topics_list_for_user(context, data_dict):
     topics_q = model.Session.query(model.Group) \
         .filter(model.Group.type == "topics") \
         .filter(model.Group.state == 'active')
-
+    """
     if not sysadmin:
         # for non-Sysadmins check they have the required permission
 
@@ -87,6 +89,8 @@ def topics_list_for_user(context, data_dict):
             return []
 
         topics_q = topics_q.filter(model.Group.id.in_(group_ids))
-
+    """
     orgs_list = model_dictize.group_list_dictize(topics_q.all(), context)
+    for o in orgs_list:
+        o['title'] = o['title'].decode('utf_8')
     return orgs_list

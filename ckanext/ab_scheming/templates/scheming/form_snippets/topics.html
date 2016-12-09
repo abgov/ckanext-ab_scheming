@@ -1,22 +1,21 @@
 {% import 'macros/form.html' as form %}
 
-{%- set choices = [] -%}
-  {%- for c in h.topics_available() -%}
-    {%- do choices.append(
-      (c.name, h.scheming_language_text(c.title))) -%}
-  {%- endfor -%}
-  {%- if field.get('sorted_choices') -%}
-    {%- set choices = choices|sort(case_sensitive=false, attribute=1) -%}
-  {%- endif -%}
-
 {%- call form.input_block(
     "field-{{ field.field_name }}",
     label=h.scheming_language_text(field.label),
     classes=['control-medium'],
     error=errors[field.field_name],
     is_required=h.scheming_field_required(field)) -%}
+  {%- set choices = [] -%}
+  {%- for c in h.topics_available() -%}
+    {%- do choices.append(
+      (c.title, h.scheming_language_text(c.title))) -%}
+  {%- endfor -%}
+  {%- if field.get('sorted_choices') -%}
+    {%- set choices = choices|sort(case_sensitive=false, attribute=1) -%}
+  {%- endif -%}
   <select multiple
-      size="{{ ([field.get('select_size', 10), field.choices|length]|sort)[0] }}"
+      size="{{ ([field.get('select_size', 10), choices|length]|sort)[0] }}"
       style="display: block"
       id="field-{{ field.field_name }}"
       name="{{ field.field_name }}" >
@@ -28,5 +27,6 @@
       </option>
     {%- endfor -%}
   </select>
+
   {%- snippet 'scheming/form_snippets/help_text.html', field=field -%}
 {%- endcall -%}

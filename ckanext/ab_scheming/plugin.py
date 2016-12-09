@@ -3,6 +3,9 @@ import ckan.plugins.toolkit as toolkit
 import json
 import ckanext.ab_scheming.helpers as helpers
 from ckanext.ab_scheming.logic import action
+from ckanext.ab_scheming.validation import (
+    ab_scheming_multiple_choice
+)
 
 class Ab_SchemingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
@@ -10,7 +13,7 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IActions)
-
+    plugins.implements(plugins.IValidators)
 
     # IConfigurer
 
@@ -29,8 +32,8 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
     def before_index(self, pkg_dict):
         if 'audience' in pkg_dict:
             pkg_dict['audience'] = json.loads(pkg_dict['audience'])
-        if 'topic' in pkg_dict:
-            pkg_dict['topic'] = json.loads(pkg_dict['topic'])
+        if 'topics' in pkg_dict:
+            pkg_dict['topics'] = json.loads(pkg_dict['topics'])
         if 'pubtype' in pkg_dict:
             pkg_dict['pubtype'] = json.loads(pkg_dict['pubtype'])
             
@@ -52,6 +55,13 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
                        in action.__dict__.items()
                        if callable(function))
         return actions
+
+
+    """
+    IValidators
+    """
+    def get_validators(self):
+        return {'ab_scheming_multiple_choice': ab_scheming_multiple_choice}
     
     
     
