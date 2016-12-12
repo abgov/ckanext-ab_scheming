@@ -38,14 +38,6 @@
       "validators": "ab_ps_scheming_required" 
     },
     {
-      "field_name": "type",
-      "label": "Dataset Type",
-      "help_text": "Dataset type",
-      "help_inline": false,
-      "form_attrs": {"disabled": "disabled",
-                     "style": "background-color:#ddd"}
-    },
-    {
       "field_name": "creator",
       "label": "Creator",
       "help_text": "The business entity responsible for creating or compiling the original content of an information resource.",
