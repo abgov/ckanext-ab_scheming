@@ -10,9 +10,9 @@
       "help_text": "The full and formal name given to an information resource.",
       "help_inline": false,
       "preset": "title",
-	  "form_placeholder": "Dataset Title",
+	     "form_placeholder": "Dataset Title",
       "required": true,
-	  "validators": "scheming_required" 
+	    "validators": "scheming_required" 
     },
     {
       "field_name": "name",
@@ -51,6 +51,8 @@
       "help_text": "The business entity responsible for creating or compiling the original content of an information resource.",
       "help_inline": false,
       "preset": "multiple_select",
+      "required": true,
+      "validators": "ab_scheming_multiple_choice ab_ps_scheming_required",
       "choices": [
         {"value": "Advanced Education", "label": "Advanced Education"},
         {"value": "Agriculture and Forestry", "label": "Agriculture and Forestry"},
@@ -375,7 +377,8 @@
       "help_text": "The group topics",
       "help_inline": false,
       "preset": "multiple_select",
-      "validators": "ab_scheming_multiple_choice"
+      "required": true,
+      "validators": "ab_scheming_multiple_choice ab_ps_scheming_required"
     },
     {
       "field_name": "date_created",
@@ -522,7 +525,9 @@
       "form_placeholder": "name (personal, role name, branch, etc.)",
       "display_property": "dc:contact",
       "help_text": "The organizational contact for users of the Open Government Portal to obtain further information or provide feedback about an information resource or its metadata.",
-      "help_inline": false
+      "help_inline": false,
+      "required": true ,
+      "validators": "ab_ps_scheming_required"
     },
     {
       "field_name": "contact_email",
@@ -530,7 +535,9 @@
       "form_placeholder": "opendata@gov.ab.ca",
       "display_property": "dc:creator",
       "display_snippet": "email.html",
-      "display_email_name_field": "author"
+      "display_email_name_field": "author",
+      "required": true ,
+      "validators": "ab_ps_scheming_required"
     },
     {
       "field_name": "contactother",
@@ -689,11 +696,10 @@
       "help_inline": false,
       "form_snippet": "classification.html",
       "choices": [
-        {"value": "1", "label": "1"},
-        {"value": "2", "label": "2"},
-        {"value": "3", "label": "3"},
-        {"value": "4", "label": "4"},
-        {"value": "5", "label": "5"}
+        {"value": "1. Unrestricted", "label": "1"},
+        {"value": "2. Protected", "label": "2"},
+        {"value": "3. Confidential", "label": "3"},
+        {"value": "4. Restricted", "label": "4"}
       ]
     },
     {

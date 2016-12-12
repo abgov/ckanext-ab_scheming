@@ -62,6 +62,8 @@
       "help_text": "The business entity responsible for creating or compiling the original content of an information resource.",
       "help_inline": false,
       "preset": "multiple_select",
+      "required": true,
+      "validators": "ab_scheming_multiple_choice ab_ps_scheming_required",
       "choices": [
         {"value": "Advanced Education", "label": "Advanced Education"},
         {"value": "Agriculture and Forestry", "label": "Agriculture and Forestry"},
@@ -386,7 +388,8 @@
       "help_text": "The group topics",
       "help_inline": false,
       "preset": "multiple_select",
-      "validators": "ab_scheming_multiple_choice"
+      "required": true,
+      "validators": "ab_scheming_multiple_choice ab_ps_scheming_required"
     },
     {
       "field_name": "date_created",
@@ -982,10 +985,10 @@
       "help_inline": false,
       "form_snippet": "classification.html",
       "choices": [
-        {"value": "1", "label": "1"},
-        {"value": "2", "label": "2"},
-        {"value": "3", "label": "3"},
-        {"value": "4", "label": "4"}
+        {"value": "1. Unrestricted", "label": "1"},
+        {"value": "2. Protected", "label": "2"},
+        {"value": "3. Confidential", "label": "3"},
+        {"value": "4. Restricted", "label": "4"}
       ]
     },
     {
