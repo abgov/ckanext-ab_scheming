@@ -410,6 +410,36 @@
       "help_inline": false
     },
     {
+      "field_name": "date_metadata_created",
+      "label": "Date Metadata Created",
+      "preset": "date",
+      "required": true,
+      "validators": "ab_ps_scheming_required",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which the dataset metadata is created or compiled.",
+      "help_inline": false
+    },
+    {
+      "field_name": "date_metadata_modified",
+      "label": "Date Metadata Modified",
+      "preset": "date",
+      "required": true,
+      "validators": "ab_ps_scheming_required",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which dataset metadata is changed.",
+      "help_inline": false
+    },
+    {
+      "field_name": "date_add_to_catalogue",
+      "label": "Date Add to Catalogue",
+      "preset": "date",
+      "required": true,
+      "validators": "ab_ps_scheming_required",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which dataset is added to catalogue.",
+      "help_inline": false
+    },
+    {
       "field_name": "archive_date",
       "label": "Date Archived",
       "preset": "date",
@@ -985,10 +1015,10 @@
       "help_inline": false,
       "form_snippet": "classification.html",
       "choices": [
-        {"value": "1. Unrestricted", "label": "1"},
-        {"value": "2. Protected", "label": "2"},
-        {"value": "3. Confidential", "label": "3"},
-        {"value": "4. Restricted", "label": "4"}
+        {"value": "1", "label": "1. Unrestricted"},
+        {"value": "2", "label": "2. Protected"},
+        {"value": "3", "label": "3. Confidential"},
+        {"value": "4", "label": "4. Restricted"}
       ]
     },
     {
