@@ -38,40 +38,14 @@
       "validators": "ab_ps_scheming_required" 
     },
     {
-      "field_name": "topic",
-      "label": "Topic",
-      "help_text": "A controlled term that expresses the broad topical content of an information resource.",
+      "field_name": "topics",
+      "label": "Group Topics",
+      "form_snippet": "topics.html",
+      "help_text": "The group topics",
       "help_inline": false,
       "preset": "multiple_select",
-      "choices": [
-        {"value": "Aboriginal Peoples", "label": "Aboriginal Peoples"},
-        {"value": "Agriculture", "label": "Agriculture"},
-        {"value": "Arts, Culture and History", "label": "Arts, Culture and History"},
-        {"value": "Business and Industry", "label": "Business and Industry"},
-        {"value": "Economy and Finance", "label": "Economy and Finance"},
-        {"value": "Education - Adult and Continuing", "label": "Education - Adult and Continuing"},
-        {"value": "Education - Early Childhood to Grade 12", "label": "Education - Early Childhood to Grade 12"},
-        {"value": "Education - Post - Secondary and Skills Training", "label": "Education - Post-Secondary and Skills Training"},
-        {"value": "Employment and Labour", "label": "Employment and Labour"},
-        {"value": "Energy and Natural Resources", "label": "Energy and Natural Resources"},
-        {"value": "Environment", "label": "Environment"},
-        {"value": "Families and Children", "label": "Families and Children"},
-        {"value": "Government", "label": "Government"},
-        {"value": "Health and Wellness", "label": "Health and Wellness"},
-        {"value": "Housing and Utilities", "label": "Housing and Utilities"},
-        {"value": "Immigration and Migration", "label": "Immigration and Migration"},
-        {"value": "Interprovincial and International Affairs", "label": "Interprovincial and International Affairs"},
-        {"value": "Laws and Justice", "label": "Laws and Justice"},
-        {"value": "Persons with Disabilities", "label": "Persons with Disabilities"},
-        {"value": "Population and Demography", "label": "Population and Demography"},
-        {"value": "Roads, Driving and Transport", "label": "Roads, Driving and Transport"},
-        {"value": "Safety and Emergency Services", "label": "Safety and Emergency Services"},
-        {"value": "Science, Technology and Innovation", "label": "Science, Technology and Innovation"},
-        {"value": "Seniors", "label": "Seniors"},
-        {"value": "Society and Communities", "label": "Society and Communities"},
-        {"value": "Sports and Recreation", "label": "Sports and Recreation"},
-        {"value": "Tourism & Parks", "label": "Tourism & Parks"}
-        ]
+      "required": true,
+      "validators": "ab_scheming_multiple_choice ab_ps_scheming_required"
     },
     {
       "field_name": "creator",
@@ -79,6 +53,8 @@
       "help_text": "The business entity responsible for creating or compiling the original content of an information resource.",
       "help_inline": false,
       "preset": "multiple_select",
+      "required": true,
+      "validators": "ab_scheming_multiple_choice ab_ps_scheming_required",
       "choices": [
         {"value": "Advanced Education", "label": "Advanced Education"},
         {"value": "Agriculture and Forestry", "label": "Agriculture and Forestry"},
@@ -685,11 +661,10 @@
       "help_inline": false,
       "form_snippet": "classification.html",
       "choices": [
-        {"value": "1", "label": "1"},
-        {"value": "2", "label": "2"},
-        {"value": "3", "label": "3"},
-        {"value": "4", "label": "4"},
-        {"value": "5", "label": "5"}
+        {"value": "1", "label": "1. Unrestricted"},
+        {"value": "2", "label": "2. Protected"},
+        {"value": "3", "label": "3. Confidential"},
+        {"value": "4", "label": "4. Restricted"}
       ]
     },
     {
