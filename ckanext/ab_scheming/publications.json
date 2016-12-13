@@ -433,12 +433,6 @@
       "help_inline": false
     },
     {
-      "field_name": "temporalcoverage",
-      "label": "Temporal Coverage",
-      "help_text": "A time extent covered by the content of an information resource.",
-      "help_inline": false
-    },
-    {
       "field_name": "updatefrequency",
       "label": "Frequency",
       "help_text": "The time interval in which new or updated versions of an information resource are issued.",
