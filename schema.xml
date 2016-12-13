@@ -99,7 +99,7 @@
     <field name="tags" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="groups" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="audience" type="string" indexed="true" stored="true" multiValued="true"/>
-    <field name="topics" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="topic" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="pubtype" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="process_state" type="string" indexed="true" stored="true" omitNorms="true" />
     <field name="capacity" type="string" indexed="true" stored="true" multiValued="false"/>
@@ -171,7 +171,7 @@
 <copyField source="tags" dest="text"/>
 <copyField source="audience" dest="text"/>
 <copyField source="pubtype" dest="text"/>
-<copyField source="topics" dest="text"/>
+<copyField source="topic" dest="text"/>
 <copyField source="groups" dest="text"/>
 <copyField source="res_name" dest="text"/>
 <copyField source="res_description" dest="text"/>
