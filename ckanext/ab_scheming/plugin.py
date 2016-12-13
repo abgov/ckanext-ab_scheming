@@ -32,8 +32,8 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
     def before_index(self, pkg_dict):
         if 'audience' in pkg_dict:
             pkg_dict['audience'] = json.loads(pkg_dict['audience'])
-        if 'topics' in pkg_dict:
-            pkg_dict['topics'] = json.loads(pkg_dict['topics'])
+        if 'topic' in pkg_dict:
+            pkg_dict['topic'] = json.loads(pkg_dict['topic'])
         if 'pubtype' in pkg_dict:
             pkg_dict['pubtype'] = json.loads(pkg_dict['pubtype'])
             

@@ -363,7 +363,7 @@
 	    "validators": "scheming_required"
     },
     {
-      "field_name": "topics",
+      "field_name": "topic",
       "label": "Group Topics",
       "form_snippet": "topics.html",
       "help_text": "The group topics",
