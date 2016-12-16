@@ -3,6 +3,7 @@ from ckan.lib.navl.dictization_functions import unflatten
 from ckantoolkit import missing
 import json
 from ckan.common import _
+from ckanext.scheming.helpers import scheming_field_choices
 
 def scheming_validator(fn):
     """
@@ -28,12 +29,16 @@ def ab_scheming_multiple_choice(field, schema):
 
        "choice-a"
     """
-    if field.get('choices'):
-        source = field['choices']
-        key_need = 'value'
-    else:
-        source = helpers.topics_available()
-        key_need = 'title'
+
+    # There is no need for topics special case anymore as scheming handles topics
+    # via choices_helper
+
+    #if field.get('choices'):
+    source = scheming_field_choices(field)
+    key_need = 'value'
+    #else:
+    #    source = helpers.topics_available()
+    #    key_need = 'id'
 
     choice_values = set(c[key_need] for c in source )
 

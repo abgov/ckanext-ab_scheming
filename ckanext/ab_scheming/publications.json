@@ -384,10 +384,10 @@
     {
       "field_name": "topics",
       "label": "Group Topics",
-      "form_snippet": "topics.html",
       "help_text": "The group topics",
       "help_inline": false,
       "preset": "multiple_select",
+      "choices_helper": "topics_available",
       "required": true,
       "validators": "ab_scheming_multiple_choice ab_ps_scheming_required"
     },
