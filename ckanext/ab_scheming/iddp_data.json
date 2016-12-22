@@ -623,13 +623,7 @@
       "help_text": "The time frame covered by the data contained in a dataset.",
       "help_inline": false
     },
-    {
-      "field_name": "extent1",
-      "label": "Extent",
-      "help_text": "The size in KB or MB of the information resource.",
-      "help_inline": false
-    },
-    {
+   {
       "field_name": "source_type",
       "label": "Import Source",
       "help_text": "This will field will be auto populated by an import script. eg. GeoDiscover",

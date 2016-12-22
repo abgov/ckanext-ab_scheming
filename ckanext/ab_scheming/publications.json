@@ -888,19 +888,6 @@
       "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
       "help_inline": false
     },
-    
-    {
-      "field_name": "Extent",
-      "label": "Extent"
-    },
-    {
-      "field_name": "Extent2",
-      "label": "Extent"
-    },
-    {
-      "field_name": "Extent3",
-      "label": "Extent"
-    },
     {
       "field_name": "replacedby_title",
       "label": "Is Replaced By - Title",
@@ -941,8 +928,6 @@
       "field_name": "istranslation_uri",
       "label": "URI:"
     },
-    
-    
     {
       "field_name": "sensitivity",
       "label": "Sensitivity",

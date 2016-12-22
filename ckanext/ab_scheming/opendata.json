@@ -635,13 +635,7 @@
       "help_text": "The time frame covered by the data contained in a dataset.",
       "help_inline": false
     },
-    {
-      "field_name": "extent1",
-      "label": "Extent",
-      "help_text": "The size in KB or MB of the information resource.",
-      "help_inline": false
-    },
-    {
+   {
       "field_name": "sensitivity",
       "label": "Sensitivity",
       "help_text": "An information security designation that identifies the minimum level of protection assigned to an information resource.",

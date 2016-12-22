@@ -1,5 +1,5 @@
 {
-  "scheming_version": 1,
+  "scheming_version" 1,
   "dataset_type": "inventory",
   "about": "A reimplementation of the default CKAN dataset schema",
   "about_url": "http://open.alberta.ca/inventory",
@@ -621,12 +621,6 @@
       "preset": "date",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The time frame covered by the data contained in a dataset.",
-      "help_inline": false
-    },
-    {
-      "field_name": "extent1",
-      "label": "Extent",
-      "help_text": "The size in KB or MB of the information resource.",
       "help_inline": false
     },
     {
