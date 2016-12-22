@@ -6,6 +6,9 @@ from ckanext.ab_scheming.logic import action
 from ckanext.ab_scheming.validation import (
     ab_scheming_multiple_choice
 )
+from ckan.logic.action  import get as ckan_get
+from ckanext.ab_scheming.logic.action import get as ab_scheming_get
+
 
 class Ab_SchemingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
@@ -14,6 +17,7 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.IValidators)
+
 
     # IConfigurer
 
@@ -30,10 +34,12 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
         return facets_dict
         
     def before_index(self, pkg_dict):
+        """
         if 'audience' in pkg_dict:
             pkg_dict['audience'] = json.loads(pkg_dict['audience'])
         if 'topics' in pkg_dict:
             pkg_dict['topics'] = json.loads(pkg_dict['topics'])
+        """
         if 'pubtype' in pkg_dict:
             pkg_dict['pubtype'] = json.loads(pkg_dict['pubtype'])
             
