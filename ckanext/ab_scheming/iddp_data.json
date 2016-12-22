@@ -424,12 +424,6 @@
       "help_inline": false
     },
     {
-      "field_name": "temporalcoverage1",
-      "label": "Temporal Coverage",
-      "help_text": "A temporal extent covered by the content of an information resource.",
-      "help_inline": false
-    },
-    {
       "field_name": "updatefrequency",
       "label": "Update Frequency",
       "help_text": "The time interval in which new or updated versions of an information resource are issued.",
@@ -609,18 +603,18 @@
     },
     {
       "field_name": "time_coverage_from",
-      "label": "Start Date",
+      "label": "Temporal Start Date",
       "preset": "date",
       "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The time frame covered by the data contained in a dataset.",
+      "help_text": "A temporal extent covered by the content of an information resource.",
       "help_inline": false
     },
     {
       "field_name": "time_coverage_to",
-      "label": "End Date",
+      "label": "Temporal End Date",
       "preset": "date",
       "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The time frame covered by the data contained in a dataset.",
+      "help_text": "A temporal extent covered by the content of an information resource.",
       "help_inline": false
     },
    {
