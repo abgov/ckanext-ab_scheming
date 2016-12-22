@@ -527,49 +527,7 @@
       "form_snippet": "markdown.html",
       "form_placeholder": "Contact Other"
     },
-    {
-      "field_name": "process_state",
-      "label": "Change to Process State",
-      "form_snippet": "process_state.html",
-      "help_text": "The state of work flow is going to be changed to",
-      "help_inline": false,
-	    "required": true,
-	    "validators": "scheming_required ab_ps_resource_required",
-      "preset": "select",
-      "choices": [
-        {"value": "Draft", "label": "Draft"},
-        {"value": "Modified", "label": "Modified"},
-        {"value": "Submitted", "label": "Submitted"},
-        {"value": "Pending", "label": "Pending"},
-        {"value": "Rejected", "label": "Rejected"},
-        {"value": "Approved", "label": "Approved"}
-      ],
-      "form_decision_restrict_choices_to": [
-        "Pending", "Rejected", "Approved"
-      ],
-      "form_not_allow_incomplete_dataset": [
-        "Submitted", "Pending", "Rejected", "Approved"
-      ]
-    },
-    {
-      "field_name": "last_process_state",
-      "label": "Last Process State",
-      "help_text": "The last state of work flow",
-      "help_inline": false,
-      "form_attrs": {"disabled": "disabled",
-                     "style": "background-color:#ddd"}
-    },
-    {
-      "field_name": "reason",
-      "label": "Rejected Reason",
-      "form_snippet": "markdown.html",
-	  "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
-      "help_text": "Reason of rejected state of work flow",
-      "help_inline": false,
-      "required": true,
-	  "validators": "scheming_required" 
-    },
-    {
+        {
       "field_name": "tag_string",
       "label": "Keywords",
       "preset": "tag_string_autocomplete",
@@ -617,11 +575,53 @@
       "help_text": "A temporal extent covered by the content of an information resource.",
       "help_inline": false
     },
-   {
+    {
       "field_name": "source_type",
       "label": "Import Source",
       "help_text": "This will field will be auto populated by an import script. eg. GeoDiscover",
       "help_inline": false
+    },
+    {
+      "field_name": "process_state",
+      "label": "Change to Process State",
+      "form_snippet": "process_state.html",
+      "help_text": "The state of work flow is going to be changed to",
+      "help_inline": false,
+	    "required": true,
+	    "validators": "scheming_required ab_ps_resource_required",
+      "preset": "select",
+      "choices": [
+        {"value": "Draft", "label": "Draft"},
+        {"value": "Modified", "label": "Modified"},
+        {"value": "Submitted", "label": "Submitted"},
+        {"value": "Pending", "label": "Pending"},
+        {"value": "Rejected", "label": "Rejected"},
+        {"value": "Approved", "label": "Approved"}
+      ],
+      "form_decision_restrict_choices_to": [
+        "Pending", "Rejected", "Approved"
+      ],
+      "form_not_allow_incomplete_dataset": [
+        "Submitted", "Pending", "Rejected", "Approved"
+      ]
+    },
+    {
+      "field_name": "last_process_state",
+      "label": "Last Process State",
+      "help_text": "The last state of work flow",
+      "help_inline": false,
+      "form_attrs": {"disabled": "disabled",
+                     "style": "background-color:#ddd"}
+    },
+    {
+      "field_name": "reason",
+      "label": "Rejected Reason",
+      "form_snippet": "markdown.html",
+	  "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
+      "help_text": "Reason of rejected state of work flow",
+      "help_inline": false,
+      "required": true,
+	  "validators": "scheming_required" 
     }
   ],
   "resource_fields": [
