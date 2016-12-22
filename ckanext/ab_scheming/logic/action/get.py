@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import ckan.logic as logic
 import ckan.authz as authz
 import ckan.model as model
@@ -100,6 +98,8 @@ def topics_list_for_user(context, data_dict):
         o['title'] = o['title'].decode('utf_8')
     return orgs_list
 
+
+@toolkit.side_effect_free
 def package_list(context, data_dict):
     '''Return a list of the names of the site's datasets (packages).
 
