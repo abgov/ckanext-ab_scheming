@@ -415,7 +415,7 @@
       "help_text": "Reference to the legal document outlining access and usage rights for an information resource.",
       "help_inline": false,
       "required": true ,
-      "validators": "scheming_required" 
+      "validators": "ab_ps_scheming_required" 
     },
     {
       "field_name": "usage",
@@ -443,7 +443,7 @@
       "help_text": "The time interval in which new or updated versions of an information resource are issued.",
       "help_inline": false,
       "required": true,
-      "validators": "scheming_required",
+      "validators": "ab_ps_scheming_required",
       "preset": "select",
       "choices": [
         {"value": "Once", "label": "Once"},
@@ -552,7 +552,7 @@
       "help_text": "The state of work flow is going to be changed to",
       "help_inline": false,
 	    "required": true,
-	    "validators": "scheming_required ab_ps_resource_required",
+	    "validators": "ab_ps_scheming_required ab_ps_resource_required",
       "preset": "select",
       "choices": [
         {"value": "Draft", "label": "Draft"},
@@ -585,7 +585,7 @@
       "help_text": "Reason of rejected state of work flow",
       "help_inline": false,
       "required": true,
-	  "validators": "scheming_required" 
+	  "validators": "ab_ps_scheming_required" 
     },
     {
       "field_name": "tag_string",
@@ -662,7 +662,7 @@
         }
       ],
       "required": true ,
-	  "validators": "scheming_required" 
+	  "validators": "ab_ps_scheming_required" 
     },
     {
       "field_name": "source_type",
