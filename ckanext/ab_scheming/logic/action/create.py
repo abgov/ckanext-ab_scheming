@@ -6,6 +6,7 @@ import ckan.plugins as plugins
 import logging
 import ckanext.ab_scheming.helpers as helpers
 from ckan.common import _
+import ckan.plugins.toolkit as toolkit
 
 
 log = logging.getLogger(__name__)
@@ -105,8 +106,9 @@ def package_create(context, data_dict):
     model = context['model']
     user = context['user']
 
+    deployment_mode = toolkit.asbool(config.get('ckan.ab_scheming.deployment', False))
     # need to change data_dict if import from ckanapi
-    if config.get('ckan.ab_scheming.deployment', False):
+    if deployment_mode:
         data_dict = change_pkg_dict_for_import_deployment(data_dict)
 
     import pprint
@@ -143,7 +145,7 @@ def package_create(context, data_dict):
                 package_plugin.check_data_dict(data_dict)
     
     #  no need of validation if in ckanapi load
-    if not config.get('ckan.ab_scheming.deployment', False):
+    if not deployment_mode:
         data, errors = lib_plugins.plugin_validate(
             package_plugin, context, data_dict, schema, 'package_create')
         log.debug('package_create validate_errs=%r user=%s package=%s data=%r',

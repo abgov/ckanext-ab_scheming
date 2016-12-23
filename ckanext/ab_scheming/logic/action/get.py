@@ -125,7 +125,7 @@ def package_list(context, data_dict):
            if api == 2 else package_table.c.name)
     query = _select([col])
     # change this part control by the ini config
-    if not config.get('ckan.ab_scheming.deployment', False):
+    if not toolkit.asbool(config.get('ckan.ab_scheming.deployment', False)):
         query = query.where(_and_(
             package_table.c.state == 'active',
             package_table.c.private == False,

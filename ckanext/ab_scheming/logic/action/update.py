@@ -8,6 +8,8 @@ import ckanext.ab_scheming.helpers as helpers
 from ckan.common import _
 import datetime
 from  ckanext.ab_scheming.logic.action.create import change_pkg_dict_for_import_deployment 
+import ckan.plugins.toolkit as toolkit
+
 
 log = logging.getLogger(__name__)
 _check_access = logic.check_access
@@ -45,8 +47,9 @@ def package_update(context, data_dict):
     model = context['model']
     user = context['user']
 
+    deployment_mode = toolkit.asbool(config.get('ckan.ab_scheming.deployment', False))
     # need to change data_dict if import from ckanapi
-    if config.get('ckan.ab_scheming.deployment', False):
+    if deployment_mode:
         data_dict = change_pkg_dict_for_import_deployment(data_dict)
 
     name_or_id = data_dict.get("id") or data_dict['name']
@@ -81,7 +84,7 @@ def package_update(context, data_dict):
                 package_plugin.check_data_dict(data_dict)
 
     #  no need of validation if in ckanapi load
-    if not config.get('ckan.ab_scheming.deployment', False):
+    if not deployment_mode:
         data, errors = lib_plugins.plugin_validate(
             package_plugin, context, data_dict, schema, 'package_update')
         log.debug('package_update validate_errs=%r user=%s package=%s data=%r',
@@ -123,7 +126,7 @@ def package_update(context, data_dict):
         for index, resource in enumerate(data['resources']):
             resource['id'] = pkg.resources[index].id
 
-    if not config.get('ckan.ab_scheming.deployment', False):
+    if not deployment_mode:
         for item in plugins.PluginImplementations(plugins.IPackageController):
             item.edit(pkg)
 
