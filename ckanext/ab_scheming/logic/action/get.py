@@ -9,6 +9,7 @@ import sqlalchemy
 
 _check_access = logic.check_access
 _select = sqlalchemy.sql.select
+_and_ = sqlalchemy.and_
 
 def topics_list_for_user(context, data_dict):
     '''Return the all types of groups that the user has a given permission for.
