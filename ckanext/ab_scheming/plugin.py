@@ -3,6 +3,7 @@ import ckan.plugins.toolkit as toolkit
 import json
 import ckanext.ab_scheming.helpers as helpers
 from ckanext.ab_scheming.logic import action
+from ckanext.ab_scheming.logic import auth
 from ckanext.ab_scheming.validation import (
     ab_scheming_multiple_choice
 )
@@ -17,10 +18,11 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.IValidators)
+    plugins.implements(plugins.IAuthFunctions)
+    
 
 
     # IConfigurer
-
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
@@ -62,6 +64,14 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
                        if callable(function))
         return actions
 
+    """
+    IAuthFunctions
+    """
+    def get_auth_functions(self):
+        auths = dict((name, function) for name, function
+                       in auth.__dict__.items()
+                       if callable(function))
+        return auths
 
     """
     IValidators
