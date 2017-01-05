@@ -25,12 +25,20 @@
     {
       "field_name": "license_id",
       "label": "License",
-      "form_snippet": "license.html"
+      "form_snippet": "license.html",
+      "help_text": "Reference to the legal document outlining access and usage rights for an information resource.",
+      "help_inline": false,
+      "required": true ,
+      "validators": "scheming_required"
     },
     {
       "field_name": "owner_org",
-      "label": "Organization",
-      "preset": "dataset_organization"
+      "label": "Publisher",
+      "preset": "dataset_organization",
+      "help_text": "The business entity responsible for making an information resource publicly available.",
+      "help_inline": false,
+      "required": true,
+      "validators": "scheming_required"
     },
     {
       "field_name": "process_state",
