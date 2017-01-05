@@ -424,7 +424,8 @@
       "help_text": "Reference to the legal document outlining access and usage rights for an information resource.",
       "required": true,
       "validators": "scheming_required",
-      "help_inline": false
+      "help_inline": false,
+      "default": "OGLA"
     },
     {
       "field_name": "usageconsiderations",

@@ -407,7 +407,8 @@
       "help_text": "Reference to the legal document outlining access and usage rights for an information resource.",
       "help_inline": false,
       "required": true ,
-      "validators": "scheming_required" 
+      "validators": "scheming_required",
+      "default": "OGLA" 
     },
     {
       "field_name": "usage",
