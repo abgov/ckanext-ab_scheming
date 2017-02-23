@@ -23,52 +23,28 @@
       "field_name": "owner_org",
       "label": "Publisher",
       "preset": "dataset_organization",
-	  "help_text": "The business entity responsible for making an information resource publicly available.",
-	  "required": true,
-	  "validators": "scheming_required",
+	    "help_text": "The business entity responsible for making an information resource publicly available.",
+	    "required": true,
+	    "validators": "scheming_required",
       "help_inline": false
     },
     {
-      "field_name": "alternatetitle1",
+      "field_name": "alternatetitles",
       "label": "Alternative Title",
       "help_text": "An alternative name used as a substitute or additional access point for an information resource.",
       "help_inline": false,
-      "form_placeholder": "eg. An Alternative Title"
+      "form_placeholder": "eg. An Alternative Title",
+      "preset": "repeating_text",
+      "form_blanks": 3
     },
     {
-      "field_name": "alternatetitle2",
-      "label": "Alternative Title",
-      "help_text": "An alternative name used as a substitute or additional access point for an information resource.",
+      "field_name": "seriestitles",
+      "label": "Series Title",
+      "form_placeholder": "eg. Series Title",
+      "help_text": "A distinctive collective title applied to an information resource and one or more other resources that also have their own separate titles.",
       "help_inline": false,
-      "form_placeholder": "eg. An Alternative Title"
-    },
-    {
-      "field_name": "alternatetitle3",
-      "label": "Alternative Title",
-      "help_text": "An alternative name used as a substitute or additional access point for an information resource.",
-      "help_inline": false,
-      "form_placeholder": "eg. An Alternative Title"
-    },
-    {
-      "field_name": "seriestitle",
-      "label": "Series Title",
-      "form_placeholder": "eg. Series Title",
-      "help_text": "A distinctive collective title applied to an information resource and one or more other resources that also have their own separate titles.",
-      "help_inline": false
-    },
-    {
-      "field_name": "seriestitle2",
-      "label": "Series Title",
-      "form_placeholder": "eg. Series Title",
-      "help_text": "A distinctive collective title applied to an information resource and one or more other resources that also have their own separate titles.",
-      "help_inline": false
-    },
-    {
-      "field_name": "seriestitle3",
-      "label": "Series Title",
-      "form_placeholder": "eg. Series Title",
-      "help_text": "A distinctive collective title applied to an information resource and one or more other resources that also have their own separate titles.",
-      "help_inline": false
+      "preset": "repeating_text",
+      "form_blanks": 3
     },
     {
       "field_name": "notes",
@@ -436,46 +412,13 @@
       ]
     },
     {
-      "field_name": "contributor",
+      "field_name": "contributors",
       "label": "Contributor",
       "form_placeholder": "eg. Contributor",
       "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contributor2",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contributor3",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contributor4",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contributor5",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contributor6",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
+      "help_inline": false,
+      "preset": "repeating_text",
+      "form_blanks": 3
     },
     {
       "field_name": "contact",
@@ -503,28 +446,28 @@
       "label": "Place of Publication",
       "preset": "select",
       "choices": [
-{"value": "Edmonton", "label": "Edmonton"},
-{"value": "Calgary", "label": "Calgary"},
-{"value": "Airdrie", "label": "Airdrie"},
-{"value": "Brooks", "label": "Brooks"},
-{"value": "Camrose", "label": "Camrose"},
-{"value": "Chestermere", "label": "Chestermere"},
-{"value": "ColdLake", "label": "Cold Lake"},
-{"value": "FortMcMurray", "label": "Fort McMurray"},
-{"value": "FortSaskatchewan", "label": "Fort Saskatchewan"},
-{"value": "GrandePrairie", "label": "Grande Prairie"},
-{"value": "Lacombe", "label": "Lacombe"},
-{"value": "Leduc", "label": "Leduc"},
-{"value": "Lethbridge", "label": "Lethbridge"},
-{"value": "Lloydminster", "label": "Lloydminster"},
-{"value": "MedicineHat", "label": "Medicine Hat"},
-{"value": "RedDeer", "label": "Red Deer"},
-{"value": "SherwoodPark", "label": "Sherwood Park"},
-{"value": "SpruceGrove", "label": "Spruce Grove"},
-{"value": "StAlbert", "label": "St. Albert"},
-{"value": "Wetaskiwin", "label": "Wetaskiwin"},
-{"value": "Morinville", "label": "Morinville"},
-{"value": "Strathmore", "label": "Strathmore"}
+          {"value": "Edmonton", "label": "Edmonton"},
+          {"value": "Calgary", "label": "Calgary"},
+          {"value": "Airdrie", "label": "Airdrie"},
+          {"value": "Brooks", "label": "Brooks"},
+          {"value": "Camrose", "label": "Camrose"},
+          {"value": "Chestermere", "label": "Chestermere"},
+          {"value": "ColdLake", "label": "Cold Lake"},
+          {"value": "FortMcMurray", "label": "Fort McMurray"},
+          {"value": "FortSaskatchewan", "label": "Fort Saskatchewan"},
+          {"value": "GrandePrairie", "label": "Grande Prairie"},
+          {"value": "Lacombe", "label": "Lacombe"},
+          {"value": "Leduc", "label": "Leduc"},
+          {"value": "Lethbridge", "label": "Lethbridge"},
+          {"value": "Lloydminster", "label": "Lloydminster"},
+          {"value": "MedicineHat", "label": "Medicine Hat"},
+          {"value": "RedDeer", "label": "Red Deer"},
+          {"value": "SherwoodPark", "label": "Sherwood Park"},
+          {"value": "SpruceGrove", "label": "Spruce Grove"},
+          {"value": "StAlbert", "label": "St. Albert"},
+          {"value": "Wetaskiwin", "label": "Wetaskiwin"},
+          {"value": "Morinville", "label": "Morinville"},
+          {"value": "Strathmore", "label": "Strathmore"}
       ]
     },
     {
@@ -580,9 +523,9 @@
       "field_name": "createdate",
       "label": "Date Created",
       "preset": "date",
-	  "help_text": "The date, or date and time, on which the intellectual content of an information resource is created or compiled.",
-	  "required": true,
-	  "validators": "scheming_required",
+	    "help_text": "The date, or date and time, on which the intellectual content of an information resource is created or compiled.",
+	    "required": true,
+	    "validators": "scheming_required",
       "help_inline": false
     },
     {
@@ -610,21 +553,21 @@
       "help_inline": false,
       "preset": "select",
       "choices": [
-{"value": "Once", "label": "Once"},
-{"value": "Daily", "label": "Daily"},
-{"value": "Weekly", "label": "Weekly"},
-{"value": "Every 2 weeks", "label": "Every 2 weeks"},
-{"value": "Twice monthly", "label": "Twice monthly"},
-{"value": "Monthly", "label": "Monthly"},
-{"value": "Every 2 months", "label": "Every 2 months"},
-{"value": "Quarterly", "label": "Quarterly (every 3 months)"},
-{"value": "Every 4 months", "label": "Every 4 months"},
-{"value": "Semi-annual", "label": "Semi-annual (every 6 months)"},
-{"value": "Annual", "label": "Annual"},
-{"value": "Biennial", "label": "Biennial (every 2 years)"},
-{"value": "Every 5 years", "label": "Every 5 years"},
-{"value": "Irregular", "label": "Irregular"},
-{"value": "Other", "label": "Other"} 
+        {"value": "Once", "label": "Once"},
+        {"value": "Daily", "label": "Daily"},
+        {"value": "Weekly", "label": "Weekly"},
+        {"value": "Every 2 weeks", "label": "Every 2 weeks"},
+        {"value": "Twice monthly", "label": "Twice monthly"},
+        {"value": "Monthly", "label": "Monthly"},
+        {"value": "Every 2 months", "label": "Every 2 months"},
+        {"value": "Quarterly", "label": "Quarterly (every 3 months)"},
+        {"value": "Every 4 months", "label": "Every 4 months"},
+        {"value": "Semi-annual", "label": "Semi-annual (every 6 months)"},
+        {"value": "Annual", "label": "Annual"},
+        {"value": "Biennial", "label": "Biennial (every 2 years)"},
+        {"value": "Every 5 years", "label": "Every 5 years"},
+        {"value": "Irregular", "label": "Irregular"},
+        {"value": "Other", "label": "Other"} 
       ]
     },
     {
@@ -672,46 +615,13 @@
       "help_inline": false
     },
     {
-      "field_name": "subject",
+      "field_name": "subjects",
       "label": "Subject (LCSH)",
       "form_placeholder": "eg. Subject",
       "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "subject2",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "subject3",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "subject4",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "subject5",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "subject6",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
+      "help_inline": false,
+      "preset": "repeating_text",
+      "form_blanks": 3
     },
     {
       "field_name": "time_coverage_from",
@@ -726,22 +636,12 @@
       "form_placeholder": "date_format='%Y-%m-%d'"
     },
     {
-      "field_name": "spatialcoverage",
+      "field_name": "spatialcoverages",
       "label": "Spatial Coverage",
       "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "spatialcoverage2",
-      "label": "Spatial Coverage",
-      "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "spatialcoverage3",
-      "label": "Spatial Coverage",
-      "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
-      "help_inline": false
+      "help_inline": false,
+      "preset": "repeating_text",
+      "form_blanks": 3
     },
     {
       "field_name": "audience",
