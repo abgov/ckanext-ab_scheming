@@ -8,7 +8,13 @@ from ckanext.ab_scheming.validation import (
     ab_scheming_multiple_choice
 )
 from ckan.logic.action  import get as ckan_get
-from ckanext.ab_scheming.logic.action import get as ab_scheming_get
+from ckanext.ab_scheming.logic.action.get import (
+    topics_list_for_user,
+    package_list
+)
+from ckanext.ab_scheming.logic.action.create import package_create
+from ckanext.ab_scheming.logic.action.update import package_update
+
 
 
 class Ab_SchemingPlugin(plugins.SingletonPlugin):
@@ -59,9 +65,16 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
     IAction
     """
     def get_actions(self):
+        '''
         actions = dict((name, function) for name, function
                        in action.__dict__.items()
                        if callable(function))
+        '''
+        actions = {'topics_list_for_user': topics_list_for_user,
+                    'package_list': package_list,
+                    'package_create': package_create,
+                    'package_update': package_update
+                  }
         return actions
 
     """
