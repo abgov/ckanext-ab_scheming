@@ -1,3 +1,5 @@
+
+# encoding=utf8
 import ckanext.ab_scheming.helpers as helpers
 import ckan.logic as logic
 import ckan.plugins.toolkit as toolkit
@@ -35,7 +37,8 @@ CREATOR_MATCH = {
     'International, Intergovernmental and Aboriginal Relations (2006-2008, 2011-2013)': 'International, Intergovernmental and Aboriginal Relations (2006-2008, 2011-2012)',
     'Public Works, Supply, and Services (1983-1999)': 'PublicWorks, Supply, and Services (1983-1999)',
     'Treasury Board and Enterprise (2011-2013)': 'Treasury Board and Enterprise (2011-2012)',
-    'Treasury Board (2004-2006, 2008-2011, 2013-2014)': 'Treasury Board (2004-2011)'
+    'Treasury Board (2004-2006, 2008-2011, 2013-2014)': 'Treasury Board (2004-2011)',
+    "Aboriginal Relations (2008–2011, 2013–2016)": 'Aboriginal Relations (2008-2011, 2013-2016)'
 }
 
 def change_pkg_dict_for_import_deployment(data_dict, mode):
@@ -174,6 +177,7 @@ def get_pkg_id(pkg_name):
     try:
         pkg_dict = toolkit.get_action('package_show')(data_dict={'id': pkg_name})
     except NotFound:
+        print("Dataset '{0}' not found!".format(pkg_name))
         raise NotFound("Dataset '{0}' not found!".format(pkg_name))
     return pkg_dict['id']
 
@@ -181,6 +185,7 @@ def get_resource_id(resource, pkg_id):
     try:
         pkg_dict = toolkit.get_action('package_show')(data_dict={'id': pkg_id})
     except NotFound:
+        print("Dataset '{0}' not found!".format(pkg_name))
         raise NotFound("Dataset '{0}' not found!".format(pkg_name))
     if len(pkg_dict['resources']) == 0:
         return ''
@@ -193,6 +198,7 @@ def get_group_id(group_name):
     try:
         group_dict = toolkit.get_action('group_show')(data_dict={'id': group_name})
     except NotFound:
+        print("Group '{0}' not found!".format(group_name))
         raise NotFound("Group '{0}' not found!".format(group_name))
     return group_dict['id']
 
@@ -200,12 +206,15 @@ def  get_tag_id(tag_name):
     try:
         tag_dict = toolkit.get_action('tag_show')(data_dict={'id': tag_name})
     except NotFound:
+        print("Tag '{0}' not found!".format(tag_name))
         raise NotFound("Tag '{0}' not found!".format(tag_name))
     return tag_dict['id']
 
 def get_topics_name(titles):
     if len(titles) == 0:
         return []
+    if not isinstance(titles, list):
+        titles = [titles]
     tmp = []
     gs = helpers.topics_available(permission='read')
     for t in titles:
@@ -218,7 +227,7 @@ def get_topics_name(titles):
                 flag = 1
                 break
         if flag == 0:
-            raise NotFound("Could not find topics '{0}' in database group table.".format(t))
+            raise NotFound("Could not find topics '{0}' in {1} in database group table.".format(t, ','.join(titles)))
     return tmp
 
 
