@@ -45,8 +45,9 @@ def change_pkg_dict_for_import_deployment(data_dict, mode):
     data_dict['url'] = ''
     if 'topic' in data_dict:
         if not data_dict['topic']: 
-            data_dict['topic'] = 'Employment and Labour'
-        data_dict['topics'] = get_topics_name(data_dict['topic'])
+            data_dict['topics'] = ['employment-and-labour']
+        else:
+            data_dict['topics'] = get_topics_name(data_dict['topic'])
         del data_dict['topic']
 
     if 'extras' in data_dict:
