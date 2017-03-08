@@ -30,7 +30,8 @@ CREATOR_MATCH = {
     'Solicitor General and Public Security (1973-1992, 2001-2006, 2008-2013)': 'Solicitor General and Public Security (1973-1992, 2001-2006, 2008-2012)',
     'Sustainable Resource Development (2001-2006, 2006-2013)': 'Sustainable Resource Development (2001-2006, 2006-2012)',
     'Jobs, Skills, Training and Labour': 'Jobs, Skills, Training and Labour (2013-2016)',
-    'Jobs,Skills,TrainingandLabour': 'Jobs, Skills, Training and Labour (2013-2016)',
+    'Jobs,Skills,TrainingandLabour': 'Jobs, Skills, Training and Labour (2013-2016)', 
+    'Jobs, Skills, Training and Labour (2013–2016)': 'Jobs, Skills, Training and Labour (2013-2016)',
     'Aboriginal Relations': 'Aboriginal Relations (2008-2011, 2013-2016)',
     'AboriginalRelations': 'Aboriginal Relations (2008-2011, 2013-2016)',
     'Advanced Education and Technology (2006-2013)': 'Advanced Education and Technology (2006-2012)',
@@ -80,6 +81,7 @@ def change_pkg_dict_for_import_deployment(data_dict, mode):
         data_dict['organization'] = {'name': 'servicealberta'}
     if 'organization' in data_dict:
         if data_dict['organization'].has_key('name'):
+            data_dict['organization']['name'] = data_dict['organization']['name'].encode('utf-8')
             if GROUP_NAME_MATCH.has_key(data_dict['organization']['name']):
                 data_dict['organization']['name'] = GROUP_NAME_MATCH[data_dict['organization']['name']]
         if data_dict['organization'].has_key('id') and mode == 'create':
@@ -142,6 +144,7 @@ def change_pkg_dict_for_import_deployment(data_dict, mode):
     else:
         tmp =[]
         for c in data_dict['creator']:
+            c = c.encode('utf-8')
             if CREATOR_MATCH.has_key(c):
                 c = CREATOR_MATCH[c]
             tmp.append(c)
@@ -222,6 +225,7 @@ def get_topics_name(titles):
     tmp = []
     gs = helpers.topics_available(permission='read')
     for t in titles:
+        t = t.encode('utf-8')
         if TOPICS_NAME_MATCH.has_key(t):
             t = TOPICS_NAME_MATCH[t]
         flag = 0
