@@ -11,7 +11,10 @@ GROUP_NAME_MATCH = {
     'employmentandimmigration2008-2011': 'employmentandimmigration-2008-2011',
     'aboriginalrelations': 'aboriginalrelations2008-2011--2013-2016',
     'jobsskillstrainingandlabour': 'jobsskillstrainingandlabour2013-2016',
-    'seniors': 'seniors2001-2004--2011-2013--2014-2016'
+    'seniors': 'seniors2001-2004--2011-2013--2014-2016',
+    'jobsskillstrainingandlabour-2013-2016': 'jobsskillstrainingandlabour2013-2016',
+    'seniors-2001-2004-2011-2013-2014-2016': 'seniors2001-2004--2011-2013--2014-2016',
+    'aboriginalrelations-2008-2011-2013-2016': 'aboriginalrelations2008-2011--2013-2016'
 }
 
 TOPICS_NAME_MATCH = {
@@ -45,7 +48,7 @@ def change_pkg_dict_for_import_deployment(data_dict, mode):
     data_dict['url'] = ''
     if 'topic' in data_dict:
         if not data_dict['topic']: 
-            data_dict['topics'] = ['employment-and-labour']
+            data_dict['topics'] = ['environment']
         else:
             data_dict['topics'] = get_topics_name(data_dict['topic'])
         del data_dict['topic']
