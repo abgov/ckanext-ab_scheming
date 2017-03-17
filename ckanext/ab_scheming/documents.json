@@ -42,7 +42,6 @@
       "validators": "scheming_required"
     }
   ],
-
   "resource_fields": [
     {
       "field_name": "url",

@@ -20,25 +20,13 @@
       "form_placeholder": "eg. my-dataset"
     },
     {
-      "field_name": "alternatetitle1",
+      "field_name": "alternatetitles",
       "label": "Alternative Title",
       "help_text": "An alternative name used as a substitute or additional access point for an information resource.",
       "help_inline": false,
-      "form_placeholder": "eg. An Alternative Title"
-    },
-    {
-      "field_name": "alternatetitle2",
-      "label": "Alternative Title",
-      "help_text": "An alternative name used as a substitute or additional access point for an information resource.",
-      "help_inline": false,
-      "form_placeholder": "eg. An Alternative Title"
-    },
-    {
-      "field_name": "alternatetitle3",
-      "label": "Alternative Title",
-      "help_text": "An alternative name used as a substitute or additional access point for an information resource.",
-      "help_inline": false,
-      "form_placeholder": "eg. An Alternative Title"
+      "form_placeholder": "eg. An Alternative Title",
+      "preset": "repeating_text",
+      "form_blanks": 3
     },
     {
       "field_name": "notes",
@@ -573,27 +561,14 @@
     },
    
     {
-      "field_name": "seriestitle",
+      "field_name": "seriestitles",
       "label": "Series Title",
       "form_placeholder": "eg. Series Title",
       "help_text": "A distinctive collective title applied to an information resource and one or more other resources that also have their own separate titles.",
-      "help_inline": false
+      "help_inline": false,
+      "preset": "repeating_text",
+      "form_blanks": 3
     },
-    {
-      "field_name": "seriestitle2",
-      "label": "Series Title",
-      "form_placeholder": "eg. Series Title",
-      "help_text": "A distinctive collective title applied to an information resource and one or more other resources that also have their own separate titles.",
-      "help_inline": false
-    },
-    {
-      "field_name": "seriestitle3",
-      "label": "Series Title",
-      "form_placeholder": "eg. Series Title",
-      "help_text": "A distinctive collective title applied to an information resource and one or more other resources that also have their own separate titles.",
-      "help_inline": false
-    },
-    
     {
       "field_name": "pubtype",
       "label": "Type",
@@ -639,46 +614,13 @@
     },
     
     {
-      "field_name": "contributor",
+      "field_name": "contributors",
       "label": "Contributor",
       "form_placeholder": "eg. Contributor",
       "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contributor2",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contributor3",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contributor4",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contributor5",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "contributor6",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false
+      "help_inline": false,
+      "preset": "repeating_text",
+      "form_blanks": 3
     },
     {
       "field_name": "placeofpub",
@@ -775,46 +717,13 @@
       "help_inline": false
     },
     {
-      "field_name": "subject",
+      "field_name": "subjects",
       "label": "Subject (LCSH)",
       "form_placeholder": "eg. Subject",
       "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "subject2",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "subject3",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "subject4",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "subject5",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "subject6",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false
+      "help_inline": false,
+      "preset": "repeating_text",
+      "form_blanks": 3
     },
     {
       "field_name": "time_coverage_from",
@@ -834,16 +743,12 @@
     },
     
     {
-      "field_name": "spatialcoverage2",
+      "field_name": "spatialcoverages",
       "label": "Spatial Coverage",
       "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "spatialcoverage3",
-      "label": "Spatial Coverage",
-      "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
-      "help_inline": false
+      "help_inline": false,
+      "preset": "repeating_text",
+      "form_blanks": 3
     },
     {
       "field_name": "replacedby_title",

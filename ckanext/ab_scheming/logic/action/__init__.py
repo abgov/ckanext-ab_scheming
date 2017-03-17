@@ -1,11 +1,11 @@
 
-# encoding=utf8
+# -*- coding: utf-8 -*-
 import ckanext.ab_scheming.helpers as helpers
 import ckan.logic as logic
 import ckan.plugins.toolkit as toolkit
 import datetime
 
-NotFound = logic.NotFound
+NotFound = logic.NotFound 
 
 GROUP_NAME_MATCH = {
     'employmentandimmigration2008-2011': 'employmentandimmigration-2008-2011',
@@ -19,7 +19,8 @@ GROUP_NAME_MATCH = {
 
 TOPICS_NAME_MATCH = {
     'Education - Post-Secondary and Skills Training': 'Education - Post - Secondary and Skills Training',
-    'Employment And Labour': 'Employment and Labour'
+    'Employment And Labour': 'Employment and Labour',
+    'seniors': 'Seniors'
 }
 
 CREATOR_MATCH = {
@@ -36,6 +37,7 @@ CREATOR_MATCH = {
     'AboriginalRelations': 'Aboriginal Relations (2008-2011, 2013-2016)',
     'Advanced Education and Technology (2006-2013)': 'Advanced Education and Technology (2006-2012)',
     'Seniors': 'Seniors (2001-2004, 2011-2013, 2014-2016)',
+    'Seniors (2001–2004, 2011–2013, 2014–2016)': 'Seniors (2001-2004, 2011-2013, 2014-2016)',
     'Municipal AffairsandHousing(2006-2008)': 'Municipal Affairs and Housing (2006-2008)',
     'Justice (1992-1993, 2011-2013)': 'Justice (1992-1993, 2011-2012)',
     'International, Intergovernmental and Aboriginal Relations (2006-2008, 2011-2013)': 'International, Intergovernmental and Aboriginal Relations (2006-2008, 2011-2012)',
@@ -106,7 +108,6 @@ def change_pkg_dict_for_import_deployment(data_dict, mode):
                 del(r['id'])
             elif not r.has_key('id') and mode == 'update':
                 r['id'] = get_resource_id(r, data_dict['id'])
-
             if r.has_key('package_id') and mode == 'create':
                 del(r['package_id'])
             elif not r.has_key('package_id') and mode == 'update':
@@ -167,7 +168,6 @@ def change_pkg_dict_for_import_deployment(data_dict, mode):
     for f in all_required_fields:
         if not exist_field_in_pkg_dict(f, data_dict):
             data_dict[f] = ''
-
     return data_dict
 
 
