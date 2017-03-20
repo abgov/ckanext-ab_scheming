@@ -158,6 +158,8 @@ def change_pkg_dict_for_import_deployment(data_dict, mode):
 
     if not 'contact_email' in data_dict or not data_dict['contact_email']:
         data_dict['contact_email'] = 'NA'
+    if 'email' in data_dict and data_dict['email']:
+        data_dict['contact_email'] = data_dict['email']
 
     if not 'contact' in data_dict or not data_dict['contact']:
         data_dict['contact'] = 'NA'
