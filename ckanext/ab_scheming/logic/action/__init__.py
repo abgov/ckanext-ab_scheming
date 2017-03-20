@@ -49,6 +49,11 @@ CREATOR_MATCH = {
 
 def change_pkg_dict_for_import_deployment(data_dict, mode):
     data_dict['url'] = ''
+    if mode == 'create':
+        data_dict['_ckan_phase'] = ''
+    elif mode == 'update' and '_ckan_phase' in data_dict:
+        del data_dict['_ckan_phase']
+
     if 'topic' in data_dict:
         if not data_dict['topic']: 
             data_dict['topics'] = ['environment']
@@ -70,7 +75,7 @@ def change_pkg_dict_for_import_deployment(data_dict, mode):
             if g.has_key('id') and mode =='create':
                 del(data_dict['groups'][ind]['id'])
             elif not g.has_key('id') and mode =='update':
-                data_dict['groups'][ind]['id'] = get_group_id(g['name'])
+                data_dict['groups'][ind]['id'] = get_group_id(g['name'], 'group')
     if 'tags' in data_dict:
         for ind, t in enumerate(data_dict['tags']):
             if t.has_key('id') and mode == 'create':
@@ -89,7 +94,7 @@ def change_pkg_dict_for_import_deployment(data_dict, mode):
         if data_dict['organization'].has_key('id') and mode == 'create':
             del(data_dict['organization']['id'])
         elif not data_dict['organization'].has_key('id') and mode == 'update':
-            data_dict['organization']['id'] = get_group_id(data_dict['organization']['name'])
+            data_dict['organization']['id'] = get_group_id(data_dict['organization']['name'], 'organization')
         if data_dict['organization'].has_key('revision_id'):
             del(data_dict['organization']['revision_id'])
     if not 'owner_org' in data_dict:
@@ -201,12 +206,15 @@ def get_resource_id(resource, pkg_id):
             return r['id']
     return ''
 
-def get_group_id(group_name):
+def get_group_id(group_name, type):
     try:
-        group_dict = toolkit.get_action('group_show')(data_dict={'id': group_name})
+        if type == 'group':
+            group_dict = toolkit.get_action('group_show')(data_dict={'id': group_name})
+        elif type == 'organization':
+            group_dict = toolkit.get_action('organization_show')(data_dict={'id': group_name})
     except NotFound:
-        print("Group '{0}' not found!".format(group_name))
-        raise NotFound("Group '{0}' not found!".format(group_name))
+        print("'{0}' {1} not found!".format(type, group_name))
+        raise NotFound("'{0}' {1} not found!".format(type, group_name))
     return group_dict['id']
 
 def  get_tag_id(tag_name):
