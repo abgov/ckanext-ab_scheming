@@ -416,7 +416,7 @@
       "default": "OGLA"
     },
     {
-      "field_name": "usageconsiderations",
+      "field_name": "usage",
       "label": "Usage Considerations",
       "form_snippet": "markdown.html",
       "form_placeholder": "Description of factors that support the effective interpretation and use of the information resource.",
@@ -652,7 +652,9 @@
         {"value": "StAlbert", "label": "St. Albert"},
         {"value": "Wetaskiwin", "label": "Wetaskiwin"},
         {"value": "Morinville", "label": "Morinville"},
-        {"value": "Strathmore", "label": "Strathmore"}
+        {"value": "Strathmore", "label": "Strathmore"},
+        {"value": "Humboldt", "label": "Humboldt"},
+        {"value": "Portage La Prairie", "label": "Portage La Prairie"}
       ]
     },
     {

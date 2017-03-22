@@ -427,7 +427,7 @@
             "help_inline": false
     },
     {
-      "field_name": "spatialcoverage1",
+      "field_name": "spatialcoverage",
       "label": "Spatial Coverage",
       "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
       "help_inline": false
