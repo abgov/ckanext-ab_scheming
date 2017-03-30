@@ -48,8 +48,7 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
             pkg_dict['topics'] = json.loads(pkg_dict['topics'])
         """
         if 'pubtype' in pkg_dict:
-            pkg_dict['pubtype'] = json.loads(pkg_dict['pubtype'])
-            
+            pkg_dict['pubtype'] = json.loads(pkg_dict['pubtype'])    
         return pkg_dict
 
     """
