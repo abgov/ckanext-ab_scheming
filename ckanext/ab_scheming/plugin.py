@@ -9,7 +9,8 @@ from ckanext.ab_scheming.validation import (
 )
 from ckan.logic.action  import get as ckan_get
 from ckanext.ab_scheming.logic.action.get import (
-    topics_list_for_user
+    topics_list_for_user,
+    package_show
 )
 from ckanext.ab_scheming.logic.action.create import package_create
 from ckanext.ab_scheming.logic.action.update import package_update
@@ -70,6 +71,7 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
                        if callable(function))
         '''
         actions = {'topics_list_for_user': topics_list_for_user,
+                    'package_show': package_show,
                     'package_create': package_create,
                     'package_update': package_update
                   }
