@@ -34,17 +34,17 @@
       "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
       "help_text": "A concise narrative of the content of an information resource that includes its purpose and function.",
       "help_inline": false,
-      "required": true,
+      "required": false,
       "validators": "ab_ps_scheming_required" 
     },
     {
       "field_name": "topics",
       "label": "Group Topics",
-      "form_snippet": "topics.html",
       "help_text": "The group topics",
       "help_inline": false,
       "preset": "multiple_select",
-      "required": true,
+      "choices_helper": "topics_available",
+      "required": false,
       "validators": "ab_scheming_multiple_choice ab_ps_scheming_required"
     },
     {
@@ -53,7 +53,7 @@
       "help_text": "The business entity responsible for creating or compiling the original content of an information resource.",
       "help_inline": false,
       "preset": "multiple_select",
-      "required": true,
+      "required": false,
       "validators": "ab_scheming_multiple_choice ab_ps_scheming_required",
       "choices": [
         {"value": "Advanced Education", "label": "Advanced Education"},
@@ -369,14 +369,14 @@
       "help_text": "The business entity responsible for making an information resource publicly available.",
       "help_inline": false,
       "preset": "dataset_organization",
-	    "required": true,
+	    "required": false,
 	    "validators": "scheming_required"
     },
     {
       "field_name": "date_created",
       "label": "Date Created",
       "preset": "date",
-      "required": true,
+      "required": false,
       "validators": "ab_ps_scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which the intellectual content of an information resource is created or compiled.",
@@ -386,7 +386,7 @@
       "field_name": "date_modified",
       "label": "Date Modified",
       "preset": "date",
-      "required": true,
+      "required": false,
       "validators": "ab_ps_scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which an information resource is changed.",
@@ -406,8 +406,9 @@
       "form_snippet": "license.html",
       "help_text": "Reference to the legal document outlining access and usage rights for an information resource.",
       "help_inline": false,
-      "required": true ,
-      "validators": "scheming_required" 
+      "required": false ,
+      "validators": "scheming_required",
+      "default": "OGLA"
     },
     {
       "field_name": "usage",
@@ -418,15 +419,9 @@
             "help_inline": false
     },
     {
-      "field_name": "spatialcoverage1",
+      "field_name": "spatialcoverage",
       "label": "Spatial Coverage",
       "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "temporalcoverage1",
-      "label": "Temporal Coverage",
-      "help_text": "A temporal extent covered by the content of an information resource.",
       "help_inline": false
     },
     {
@@ -434,7 +429,7 @@
       "label": "Update Frequency",
       "help_text": "The time interval in which new or updated versions of an information resource are issued.",
       "help_inline": false,
-      "required": true,
+      "required": false,
       "validators": "scheming_required",
       "preset": "select",
       "choices": [
@@ -533,49 +528,7 @@
       "form_snippet": "markdown.html",
       "form_placeholder": "Contact Other"
     },
-    {
-      "field_name": "process_state",
-      "label": "Change to Process State",
-      "form_snippet": "process_state.html",
-      "help_text": "The state of work flow is going to be changed to",
-      "help_inline": false,
-	    "required": true,
-	    "validators": "scheming_required",
-      "preset": "select",
-      "choices": [
-        {"value": "Draft", "label": "Draft"},
-        {"value": "Modified", "label": "Modified"},
-        {"value": "Submitted", "label": "Submitted"},
-        {"value": "Pending", "label": "Pending"},
-        {"value": "Rejected", "label": "Rejected"},
-        {"value": "Approved", "label": "Approved"}
-      ],
-      "form_decision_restrict_choices_to": [
-        "Pending", "Rejected", "Approved"
-      ],
-      "form_not_allow_incomplete_dataset": [
-        "Submitted", "Pending", "Rejected", "Approved"
-      ]
-    },
-    {
-      "field_name": "last_process_state",
-      "label": "Last Process State",
-      "help_text": "The last state of work flow",
-      "help_inline": false,
-      "form_attrs": {"disabled": "disabled",
-                     "style": "background-color:#ddd"}
-    },
-    {
-      "field_name": "reason",
-      "label": "Rejected Reason",
-      "form_snippet": "markdown.html",
-	  "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
-      "help_text": "Reason of rejected state of work flow",
-      "help_inline": false,
-      "required": true,
-	  "validators": "scheming_required" 
-    },
-    {
+   {
       "field_name": "tag_string",
       "label": "Keywords",
       "preset": "tag_string_autocomplete",
@@ -609,24 +562,18 @@
     },
     {
       "field_name": "time_coverage_from",
-      "label": "Start Date",
+      "label": "Temporal Start Date",
       "preset": "date",
       "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The time frame covered by the data contained in a dataset.",
+      "help_text": "A temporal extent covered by the content of an information resource.",
       "help_inline": false
     },
     {
       "field_name": "time_coverage_to",
-      "label": "End Date",
+      "label": "Temporal End Date",
       "preset": "date",
       "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The time frame covered by the data contained in a dataset.",
-      "help_inline": false
-    },
-    {
-      "field_name": "extent1",
-      "label": "Extent",
-      "help_text": "The size in KB or MB of the information resource.",
+      "help_text": "A temporal extent covered by the content of an information resource.",
       "help_inline": false
     },
     {
@@ -634,6 +581,48 @@
       "label": "Import Source",
       "help_text": "This will field will be auto populated by an import script. eg. GeoDiscover",
       "help_inline": false
+    },
+    {
+      "field_name": "process_state",
+      "label": "Change to Process State",
+      "form_snippet": "process_state.html",
+      "help_text": "The state of work flow is going to be changed to",
+      "help_inline": false,
+	    "required": false,
+	    "validators": "scheming_required",
+      "preset": "select",
+      "choices": [
+        {"value": "Draft", "label": "Draft"},
+        {"value": "Modified", "label": "Modified"},
+        {"value": "Submitted", "label": "Submitted"},
+        {"value": "Pending", "label": "Pending"},
+        {"value": "Rejected", "label": "Rejected"},
+        {"value": "Approved", "label": "Approved"}
+      ],
+      "form_decision_restrict_choices_to": [
+        "Pending", "Rejected", "Approved"
+      ],
+      "form_not_allow_incomplete_dataset": [
+        "Submitted", "Pending", "Rejected", "Approved"
+      ]
+    },
+    {
+      "field_name": "last_process_state",
+      "label": "Last Process State",
+      "help_text": "The last state of work flow",
+      "help_inline": false,
+      "form_attrs": {"disabled": "disabled",
+                     "style": "background-color:#ddd"}
+    },
+    {
+      "field_name": "reason",
+      "label": "Rejected Reason",
+      "form_snippet": "markdown.html",
+	  "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
+      "help_text": "Reason of rejected state of work flow",
+      "help_inline": false,
+      "required": false,
+	  "validators": "scheming_required" 
     }
   ],
   "resource_fields": [

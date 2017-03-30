@@ -373,10 +373,10 @@
     {
       "field_name": "topics",
       "label": "Group Topics",
-      "form_snippet": "topics.html",
       "help_text": "The group topics",
       "help_inline": false,
       "preset": "multiple_select",
+      "choices_helper": "topics_available",
       "required": true,
       "validators": "ab_scheming_multiple_choice ab_ps_scheming_required"
     },
@@ -415,7 +415,8 @@
       "help_text": "Reference to the legal document outlining access and usage rights for an information resource.",
       "help_inline": false,
       "required": true ,
-      "validators": "scheming_required" 
+      "validators": "scheming_required",
+      "default": "OGLA"
     },
     {
       "field_name": "usage",
@@ -429,12 +430,6 @@
       "field_name": "spatialcoverage1",
       "label": "Spatial Coverage",
       "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "temporalcoverage1",
-      "label": "Temporal Coverage",
-      "help_text": "A temporal extent covered by the content of an information resource.",
       "help_inline": false
     },
     {
@@ -545,6 +540,83 @@
       "form_snippet": "markdown.html",
       "form_placeholder": "Contact Other"
     },
+   {
+      "field_name": "tag_string",
+      "label": "Keywords",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "eg. economy, mental health, government",
+      "help_text": "Uncontrolled terms (words or phrases) assigned to describe an information resource to assist discovery and retrieval.",
+      "help_inline": false
+    },
+    {
+      "field_name": "published_date",
+      "label": "Publish on this future date.",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource will be automatically published.",
+      "help_inline": false
+    },  
+    {
+      "field_name": "review_date",
+      "label": "Review Date",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource is scheduled for review.",
+      "help_inline": false
+    },
+    {
+      "field_name": "date_issued",
+      "label": "Date Issued",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource was originally published or otherwise made publicly available for the first time.",
+      "help_inline": false
+    },
+    {
+      "field_name": "time_coverage_from",
+      "label": "Temporal Start Date",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "A temporal extent covered by the content of an information resource.",
+      "help_inline": false
+    },
+    {
+      "field_name": "time_coverage_to",
+      "label": "Temporal End Date",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "A temporal extent covered by the content of an information resource.",
+      "help_inline": false
+    },
+    {
+      "field_name": "sensitivity",
+      "label": "Sensitivity",
+      "help_text": "An information security designation that identifies the minimum level of protection assigned to an information resource.",
+      "help_inline": false,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "unrestricted",
+          "label": "Unrestricted"
+        },
+        {
+          "value": "protected",
+          "label": "Protected"
+        },
+        {
+          "value": "restricted",
+          "label": "Restricted"
+        }
+      ],
+      "required": true ,
+	  "validators": "scheming_required" 
+    },
+    {
+      "field_name": "source_type",
+      "label": "Import Source",
+      "help_text": "This will field will be auto populated by an import script. eg. GeoDiscover",
+      "help_inline": false
+    },
     {
       "field_name": "process_state",
       "label": "Change to Process State",
@@ -586,89 +658,6 @@
       "help_inline": false,
       "required": true,
 	  "validators": "scheming_required" 
-    },
-    {
-      "field_name": "tag_string",
-      "label": "Keywords",
-      "preset": "tag_string_autocomplete",
-      "form_placeholder": "eg. economy, mental health, government",
-      "help_text": "Uncontrolled terms (words or phrases) assigned to describe an information resource to assist discovery and retrieval.",
-      "help_inline": false
-    },
-    {
-      "field_name": "published_date",
-      "label": "Publish on this future date.",
-      "preset": "date",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date on which an information resource will be automatically published.",
-      "help_inline": false
-    },  
-    {
-      "field_name": "review_date",
-      "label": "Review Date",
-      "preset": "date",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date on which an information resource is scheduled for review.",
-      "help_inline": false
-    },
-    {
-      "field_name": "date_issued",
-      "label": "Date Issued",
-      "preset": "date",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date on which an information resource was originally published or otherwise made publicly available for the first time.",
-      "help_inline": false
-    },
-    {
-      "field_name": "time_coverage_from",
-      "label": "Start Date",
-      "preset": "date",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The time frame covered by the data contained in a dataset.",
-      "help_inline": false
-    },
-    {
-      "field_name": "time_coverage_to",
-      "label": "End Date",
-      "preset": "date",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The time frame covered by the data contained in a dataset.",
-      "help_inline": false
-    },
-    {
-      "field_name": "extent1",
-      "label": "Extent",
-      "help_text": "The size in KB or MB of the information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "sensitivity",
-      "label": "Sensitivity",
-      "help_text": "An information security designation that identifies the minimum level of protection assigned to an information resource.",
-      "help_inline": false,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "unrestricted",
-          "label": "Unrestricted"
-        },
-        {
-          "value": "protected",
-          "label": "Protected"
-        },
-        {
-          "value": "restricted",
-          "label": "Restricted"
-        }
-      ],
-      "required": true ,
-	  "validators": "scheming_required" 
-    },
-    {
-      "field_name": "source_type",
-      "label": "Import Source",
-      "help_text": "This will field will be auto populated by an import script. eg. GeoDiscover",
-      "help_inline": false
     }
   ],
   "resource_fields": [
