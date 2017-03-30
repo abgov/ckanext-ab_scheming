@@ -34,7 +34,7 @@
       "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
       "help_text": "A concise narrative of the content of an information resource that includes its purpose and function.",
       "help_inline": false,
-      "required": true,
+      "required": false,
       "validators": "ab_ps_scheming_required" 
     },
     {
@@ -44,7 +44,7 @@
       "help_inline": false,
       "preset": "multiple_select",
       "choices_helper": "topics_available",
-      "required": true,
+      "required": false,
       "validators": "ab_scheming_multiple_choice ab_ps_scheming_required"
     },
     {
@@ -53,7 +53,7 @@
       "help_text": "The business entity responsible for creating or compiling the original content of an information resource.",
       "help_inline": false,
       "preset": "multiple_select",
-      "required": true,
+      "required": false,
       "validators": "ab_scheming_multiple_choice ab_ps_scheming_required",
       "choices": [
         {"value": "Advanced Education", "label": "Advanced Education"},
@@ -369,14 +369,14 @@
       "help_text": "The business entity responsible for making an information resource publicly available.",
       "help_inline": false,
       "preset": "dataset_organization",
-	    "required": true,
+	    "required": false,
 	    "validators": "scheming_required"
     },
     {
       "field_name": "date_created",
       "label": "Date Created",
       "preset": "date",
-      "required": true,
+      "required": false,
       "validators": "ab_ps_scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which the intellectual content of an information resource is created or compiled.",
@@ -386,7 +386,7 @@
       "field_name": "date_modified",
       "label": "Date Modified",
       "preset": "date",
-      "required": true,
+      "required": false,
       "validators": "ab_ps_scheming_required",
       "form_placeholder": "date_format='%Y-%m-%d'",
       "help_text": "The date on which an information resource is changed.",
@@ -406,7 +406,7 @@
       "form_snippet": "license.html",
       "help_text": "Reference to the legal document outlining access and usage rights for an information resource.",
       "help_inline": false,
-      "required": true ,
+      "required": false ,
       "validators": "scheming_required",
       "default": "OGLA"
     },
@@ -419,7 +419,7 @@
             "help_inline": false
     },
     {
-      "field_name": "spatialcoverage1",
+      "field_name": "spatialcoverage",
       "label": "Spatial Coverage",
       "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
       "help_inline": false
@@ -429,7 +429,7 @@
       "label": "Update Frequency",
       "help_text": "The time interval in which new or updated versions of an information resource are issued.",
       "help_inline": false,
-      "required": true,
+      "required": false,
       "validators": "scheming_required",
       "preset": "select",
       "choices": [
@@ -588,7 +588,7 @@
       "form_snippet": "process_state.html",
       "help_text": "The state of work flow is going to be changed to",
       "help_inline": false,
-	    "required": true,
+	    "required": false,
 	    "validators": "scheming_required",
       "preset": "select",
       "choices": [
@@ -621,7 +621,7 @@
 	  "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
       "help_text": "Reason of rejected state of work flow",
       "help_inline": false,
-      "required": true,
+      "required": false,
 	  "validators": "scheming_required" 
     }
   ],
