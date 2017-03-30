@@ -143,3 +143,14 @@ Update vocabularies already in database.
     $ psql -d ckan_default -a -f $PATH/update_vocabs.sql
     Rebuild Search index
     $ paster --plugin=ckan search-index rebuild -c /etc/ckan/default/config.ini
+
+
+-------------------------
+Add field 'process_state'
+-------------------------
+
+This field has two choices for dropdown list. 
+
+    The attribute 'form_restrict_choices_to' is for admin of organization and sysadmin only.
+    The attribute 'choices' is for all members of organization.
+    

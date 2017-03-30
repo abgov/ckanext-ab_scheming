@@ -1,17 +1,18 @@
 {
   "scheming_version": 1,
-  "dataset_type": "publications",
-  "about_url": "http://open.alberta.ca/publication-page",
+  "dataset_type": "dataset",
+  "about": "A reimplementation of the default CKAN dataset schema",
+  "about_url": "http://open.alberta.ca/dataset",
   "dataset_fields": [
     {
       "field_name": "title",
       "label": "Title",
+      "help_text": "The full and formal name given to an information resource.",
+      "help_inline": false,
       "preset": "title",
-      "form_placeholder": "Publication Title",
-	    "help_text": "The full and formal name given to an information resource.",
-	    "required": true,
-	    "validators": "scheming_required",
-      "help_inline": false
+	  "form_placeholder": "Dataset Title",
+      "required": true,
+	  "validators": "scheming_required" 
     },
     {
       "field_name": "name",
@@ -20,29 +21,31 @@
       "form_placeholder": "eg. my-dataset"
     },
     {
-      "field_name": "alternatetitles",
+      "field_name": "alternatetitle",
       "label": "Alternative Title",
       "help_text": "An alternative name used as a substitute or additional access point for an information resource.",
       "help_inline": false,
-      "form_placeholder": "eg. An Alternative Title",
-      "preset": "repeating_text",
-      "form_blanks": 3
+      "form_placeholder": "eg. An Alternative Title"
     },
     {
       "field_name": "notes",
       "label": "Description",
-      "required": true,
-      "validators": "ab_ps_scheming_required",
       "form_snippet": "markdown.html",
-      "form_placeholder": "eg. Some useful notes about this publication"
+      "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
+      "help_text": "A concise narrative of the content of an information resource that includes its purpose and function.",
+      "help_inline": false,
+      "required": true,
+      "validators": "ab_ps_scheming_required" 
     },
     {
-      "field_name": "type",
-      "label": "Dataset Type",
-      "help_text": "Dataset type",
+      "field_name": "topics",
+      "label": "Group Topics",
+      "help_text": "The group topics",
       "help_inline": false,
-      "form_attrs": {"disabled": "disabled",
-                     "style": "background-color:#ddd"}
+      "preset": "multiple_select",
+      "choices_helper": "topics_available",
+      "required": true,
+      "validators": "ab_scheming_multiple_choice ab_ps_scheming_required"
     },
     {
       "field_name": "creator",
@@ -361,49 +364,32 @@
       ]
     },
     {
-      "field_name": "contributors",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false,
-      "preset": "repeating_text",
-      "form_blanks": 3
-    },
-    {
       "field_name": "owner_org",
       "label": "Publisher",
-      "preset": "dataset_organization",
-	    "help_text": "The business entity responsible for making an information resource publicly available.",
-	    "required": true,
-	    "validators": "scheming_required",
-      "help_inline": false
-    },
-    {
-      "field_name": "topics",
-      "label": "Group Topics",
-      "help_text": "The group topics",
+      "help_text": "The business entity responsible for making an information resource publicly available.",
       "help_inline": false,
-      "preset": "multiple_select",
-      "choices_helper": "topics_available",
-      "required": true,
-      "validators": "ab_scheming_multiple_choice ab_ps_scheming_required"
+      "preset": "dataset_organization",
+	    "required": true,
+	    "validators": "scheming_required"
     },
     {
       "field_name": "date_created",
       "label": "Date Created",
       "preset": "date",
-      "help_text": "The date, or date and time, on which the intellectual content of an information resource is created or compiled.",
       "required": true,
       "validators": "ab_ps_scheming_required",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which the intellectual content of an information resource is created or compiled.",
       "help_inline": false
     },
     {
       "field_name": "date_modified",
       "label": "Date Modified",
       "preset": "date",
-      "help_text": "The date, or date and time, on which an information resource is changed.",
       "required": true,
       "validators": "ab_ps_scheming_required",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource is changed.",
       "help_inline": false
     },
     {
@@ -419,43 +405,49 @@
       "label": "Licence",
       "form_snippet": "license.html",
       "help_text": "Reference to the legal document outlining access and usage rights for an information resource.",
-      "required": true,
-      "validators": "scheming_required",
       "help_inline": false,
-      "default": "OGLA"
+      "required": true ,
+      "validators": "scheming_required",
+      "default": "OGLA" 
     },
     {
-      "field_name": "usageconsiderations",
+      "field_name": "usage",
       "label": "Usage Considerations",
       "form_snippet": "markdown.html",
-      "form_placeholder": "Description of factors that support the effective interpretation and use of the information resource.",
-      "help_text": "Description of factors that support the effective interpretation and use of the information resource.",
+            "form_placeholder": "Usage Considerations",
+            "help_text": "Description of factors that support the effective interpretation and use of the information resource.",
+            "help_inline": false
+    },
+    {
+      "field_name": "spatialcoverage",
+      "label": "Spatial Coverage",
+      "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
       "help_inline": false
     },
     {
       "field_name": "updatefrequency",
-      "label": "Frequency",
+      "label": "Update Frequency",
       "help_text": "The time interval in which new or updated versions of an information resource are issued.",
+      "help_inline": false,
       "required": true,
       "validators": "scheming_required",
-      "help_inline": false,
       "preset": "select",
       "choices": [
-          {"value": "Once", "label": "Once"},
-          {"value": "Daily", "label": "Daily"},
-          {"value": "Weekly", "label": "Weekly"},
-          {"value": "Every 2 weeks", "label": "Every 2 weeks"},
-          {"value": "Twice monthly", "label": "Twice monthly"},
-          {"value": "Monthly", "label": "Monthly"},
-          {"value": "Every 2 months", "label": "Every 2 months"},
-          {"value": "Quarterly", "label": "Quarterly (every 3 months)"},
-          {"value": "Every 4 months", "label": "Every 4 months"},
-          {"value": "Semi-annual", "label": "Semi-annual (every 6 months)"},
-          {"value": "Annual", "label": "Annual"},
-          {"value": "Biennial", "label": "Biennial (every 2 years)"},
-          {"value": "Every 5 years", "label": "Every 5 years"},
-          {"value": "Irregular", "label": "Irregular"},
-          {"value": "Other", "label": "Other"} 
+        {"value": "Once", "label": "Once"},
+        {"value": "Daily", "label": "Daily"},
+        {"value": "Weekly", "label": "Weekly"},
+        {"value": "Every 2 weeks", "label": "Every 2 weeks"},
+        {"value": "Twice monthly", "label": "Twice monthly"},
+        {"value": "Monthly", "label": "Monthly"},
+        {"value": "Every 2 months", "label": "Every 2 months"},
+        {"value": "Quarterly", "label": "Quarterly (every 3 months)"},
+        {"value": "Every 4 months", "label": "Every 4 months"},
+        {"value": "Semi-annual", "label": "Semi-annual (every 6 months)"},
+        {"value": "Annual", "label": "Annual"},
+        {"value": "Biennial", "label": "Biennial (every 2 years)"},
+        {"value": "Every 5 years", "label": "Every 5 years"},
+        {"value": "Irregular", "label": "Irregular"},
+        {"value": "Other", "label": "Other"} 
       ]
     },
     {
@@ -504,35 +496,8 @@
       "help_text": "The specified language of an information resource.",
       "help_inline": false,
       "choices": [   
-        {"value": "en-CA [default]", "label": "English (Canadian)"},
-        {"value": "am", "label": "Amharic"},
-        {"value": "ar", "label": "Arabic"},
-        {"value": "zh-cn", "label": "Chinese (Simplified)"},
-        {"value": "zh-hk", "label": "Chinese (Traditional)"},
-        {"value": "cr", "label": "Cree"},
-        {"value": "nl", "label": "Dutch"},
-        {"value": "fa", "label": "Farsi"},
-        {"value": "fr-CA", "label": "French (Canadian)"},
-        {"value": "de", "label": "German"},
-        {"value": "hi", "label": "Hindi"},
-        {"value": "it", "label": "Italian"},
-        {"value": "ja", "label": "Japanese"},
-        {"value": "swh", "label": "Kiswahili; Swahili"},
-        {"value": "ko", "label": "Korean"},
-        {"value": "ku", "label": "Kurdish"},
-        {"value": "crk", "label": "Plains Cree"},
-        {"value": "pl", "label": "Polish"},
-        {"value": "pa", "label": "Punjabi"},
-        {"value": "pt", "label": "Portuguese"},
-        {"value": "ro", "label": "Romanian"},
-        {"value": "ru", "label": "Russian"},
-        {"value": "so", "label": "Somali"},
-        {"value": "es", "label": "Spanish"},
-        {"value": "tl", "label": "Tagalog"},
-        {"value": "th", "label": "Thai"},
-        {"value": "ti", "label": "Tigrinya"},
-        {"value": "uk", "label": "Ukranian"},
-        {"value": "vi", "label": "Vietnamese"}
+                {"value": "en-CA [default]", "label": "English (Canadian)"},
+                {"value": "fr-CA", "label": "French (Canadian)"}
       ]
     },
     {
@@ -544,11 +509,10 @@
     {
       "field_name": "contact",
       "label": "Contact Name",
-      "form_placeholder": "eg. personal, role name, branch",
+      "form_placeholder": "name (personal, role name, branch, etc.)",
+      "display_property": "dc:contact",
       "help_text": "The organizational contact for users of the Open Government Portal to obtain further information or provide feedback about an information resource or its metadata.",
-      "help_inline": false,
-      "required": true ,
-      "validators": "ab_ps_scheming_required"
+      "help_inline": false
     },
     {
       "field_name": "contact_email",
@@ -556,9 +520,7 @@
       "form_placeholder": "opendata@gov.ab.ca",
       "display_property": "dc:creator",
       "display_snippet": "email.html",
-      "display_email_name_field": "author",
-      "required": true ,
-      "validators": "ab_ps_scheming_required"
+      "display_email_name_field": "author"
     },
     {
       "field_name": "contactother",
@@ -566,155 +528,7 @@
       "form_snippet": "markdown.html",
       "form_placeholder": "Contact Other"
     },
-   
-    {
-      "field_name": "seriestitles",
-      "label": "Series Title",
-      "form_placeholder": "eg. Series Title",
-      "help_text": "A distinctive collective title applied to an information resource and one or more other resources that also have their own separate titles.",
-      "help_inline": false,
-      "preset": "repeating_text",
-      "form_blanks": 3
-    },
-    {
-      "field_name": "pubtype",
-      "label": "Type",
-      "help_text": "The business design or structure used in the presentation and publication of an information resource.",
-      "help_inline": false,
-      "preset": "multiple_select",
-      "choices": [
-        {"value": "Assessment", "label": "Assessment"},
-        {"value": "Calendar", "label": "Calendar"},
-        {"value": "Contractual Material and Agreements", "label": "Contractual Material and Agreements"},
-        {"value": "Correspondence", "label": "Correspondence"},
-        {"value": "Dataset", "label": "Dataset"},
-        {"value": "Decision", "label": "Decision"},
-        {"value": "Educational Material", "label": "Educational Material"},
-        {"value": "Event", "label": "Event"},
-        {"value": "Fact Sheet", "label": "Fact Sheet"},
-        {"value": "Financial Report", "label": "Financial Report"},
-        {"value": "FOIP Response", "label": "FOIP Response"},
-        {"value": "Form", "label": "Form"},
-        {"value": "Geospatial Material", "label": "Geospatial Material"},
-        {"value": "Guide", "label": "Guide"},
-        {"value": "Interactive Resource", "label": "Interactive Resource"},
-        {"value": "Legislation and Regulations", "label": "Legislation and Regulations"},
-        {"value": "Licences and Permits", "label": "Licences and Permits"},
-        {"value": "Literary Material", "label": "Literary Material"},
-        {"value": "Media Release", "label": "Media Release"},
-        {"value": "Meeting Material", "label": "Meeting Material"},
-        {"value": "Moving Image", "label": "Moving Image"},
-        {"value": "Multimedia", "label": "Multimedia"},
-        {"value": "Notice", "label": "Notice"},
-        {"value": "Organizational Description", "label": "Organizational Description"},
-        {"value": "Policy", "label": "Policy"},
-        {"value": "Presentation", "label": "Presentation"},
-        {"value": "Reference Material", "label": "Reference Material"},
-        {"value": "Report", "label": "Report"},
-        {"value": "Serial", "label": "Serial"},
-        {"value": "Sound", "label": "Sound"},
-        {"value": "Standard", "label": "Standard"},
-        {"value": "Statistics", "label": "Statistics"},
-        {"value": "Still Image", "label": "Still Image"},
-        {"value": "Survey", "label": "Survey"}
-        ]
-    },
-    
-    {
-      "field_name": "contributors",
-      "label": "Contributor",
-      "form_placeholder": "eg. Contributor",
-      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
-      "help_inline": false,
-      "preset": "repeating_text",
-      "form_blanks": 3
-    },
-    {
-      "field_name": "placeofpub",
-      "label": "Place of Publication",
-      "preset": "select",
-      "choices": [
-          {"value": "Edmonton", "label": "Edmonton"},
-          {"value": "Calgary", "label": "Calgary"},
-          {"value": "Airdrie", "label": "Airdrie"},
-          {"value": "Brooks", "label": "Brooks"},
-          {"value": "Camrose", "label": "Camrose"},
-          {"value": "Chestermere", "label": "Chestermere"},
-          {"value": "ColdLake", "label": "Cold Lake"},
-          {"value": "FortMcMurray", "label": "Fort McMurray"},
-          {"value": "FortSaskatchewan", "label": "Fort Saskatchewan"},
-          {"value": "GrandePrairie", "label": "Grande Prairie"},
-          {"value": "Lacombe", "label": "Lacombe"},
-          {"value": "Leduc", "label": "Leduc"},
-          {"value": "Lethbridge", "label": "Lethbridge"},
-          {"value": "Lloydminster", "label": "Lloydminster"},
-          {"value": "MedicineHat", "label": "Medicine Hat"},
-          {"value": "RedDeer", "label": "Red Deer"},
-          {"value": "SherwoodPark", "label": "Sherwood Park"},
-          {"value": "SpruceGrove", "label": "Spruce Grove"},
-          {"value": "StAlbert", "label": "St. Albert"},
-          {"value": "Wetaskiwin", "label": "Wetaskiwin"},
-          {"value": "Morinville", "label": "Morinville"},
-          {"value": "Strathmore", "label": "Strathmore"}
-      ]
-    },
-    {
-      "field_name": "identifier-ISBN-print", "label": "ISBN (print)"
-    },
-    {
-      "field_name": "identifier-ISBN-pdf", "label": "ISBN (pdf)"
-    },
-    {
-      "field_name": "identifier-ISBN-html", "label": "ISBN (html)"
-    },
-    {
-      "field_name": "identifier-ISBN-cdrom", "label": "ISBN (CD-ROM)"
-    },
-    {
-      "field_name": "identifier-ISBN-dvd", "label": "ISBN (DVD)"
-    },
-    {
-      "field_name": "identifier-ISSN-print", "label": "ISSN (print)"
-    },
-    {
-      "field_name": "identifier-ISSN-online", "label": "ISSN (online)"
-    },
-    {
-      "field_name": "identifier-AGDEX-number", "label": "AGDEX number"
-    },
-    {
-    "field_name": "identifier-ALIS-catno", "label": "ALIS catalogue number"
-    },
-    {
-    "field_name": "identifier-NEOS-catkey", "label": "NEOS catalogue key"
-    },
-    {
-    "field_name": "identifier-local", "label": "Local Identifier"
-    },
-    {
-      "field_name": "published_date",
-      "label": "Publish on this future date.",
-      "preset": "date",
-      "form_placeholder": "date_format='%Y-%m-%d'",
-      "help_text": "The date on which an information resource will be automatically published.",
-      "help_inline": false
-    },
-    {
-       "field_name": "review_date",
-       "label": "Review Date",
-       "preset": "date",
-       "form_placeholder": "date_format='%Y-%m-%d'",
-       "help_text": "The date on which an information resource is scheduled for review.",
-       "help_inline": false
-    },
-    {
-      "field_name": "issuedate",
-      "label": "Date Issued",
-      "preset": "date",
-      "help_text": "The date, or date and time, on which an information resource was originally published or otherwise made publicly available for the first time.",
-      "help_inline": false
-    },
-    {
+        {
       "field_name": "tag_string",
       "label": "Keywords",
       "preset": "tag_string_autocomplete",
@@ -723,93 +537,50 @@
       "help_inline": false
     },
     {
-      "field_name": "subjects",
-      "label": "Subject (LCSH)",
-      "form_placeholder": "eg. Subject",
-      "help_text": "A controlled term that expresses a topic of the intellectual content of an information resource.",
-      "help_inline": false,
-      "preset": "repeating_text",
-      "form_blanks": 3
+      "field_name": "published_date",
+      "label": "Publish on this future date.",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource will be automatically published.",
+      "help_inline": false
+    },  
+    {
+      "field_name": "review_date",
+      "label": "Review Date",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource is scheduled for review.",
+      "help_inline": false
+    },
+    {
+      "field_name": "date_issued",
+      "label": "Date Issued",
+      "preset": "date",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "The date on which an information resource was originally published or otherwise made publicly available for the first time.",
+      "help_inline": false
     },
     {
       "field_name": "time_coverage_from",
       "label": "Temporal Start Date",
       "preset": "date",
-      "help_text": "A time extent covered by the content of an information resource.",
-      "help_inline": false,
-      "form_placeholder": "date_format='%Y-%m-%d'"
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "A temporal extent covered by the content of an information resource.",
+      "help_inline": false
     },
     {
       "field_name": "time_coverage_to",
       "label": "Temporal End Date",
       "preset": "date",
-      "help_text": "A time extent covered by the content of an information resource.",
-      "help_inline": false,
-      "form_placeholder": "date_format='%Y-%m-%d'"
-    },
-    
-    {
-      "field_name": "spatialcoverages",
-      "label": "Spatial Coverage",
-      "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
-      "help_inline": false,
-      "preset": "repeating_text",
-      "form_blanks": 3
-    },
-    {
-      "field_name": "replacedby_title",
-      "label": "Is Replaced By - Title",
-      "help_text": "The described resource is supplanted, displaced, or superseded in whole or in part by the referenced resource(s).",
+      "form_placeholder": "date_format='%Y-%m-%d'",
+      "help_text": "A temporal extent covered by the content of an information resource.",
       "help_inline": false
     },
     {
-      "field_name": "replacedby_uri",
-      "label": "URI:"
-    },
-    {
-      "field_name": "replaces_title",
-      "label": "Replaces - Title",
-      "help_text": "The described resource supplants, displaces, or supersedes in whole or in part the referenced resource.",
+      "field_name": "source_type",
+      "label": "Import Source",
+      "help_text": "This will field will be auto populated by an import script. eg. GeoDiscover",
       "help_inline": false
-    },
-    {
-      "field_name": "replaces_uri",
-      "label": "URI:"
-    },
-    {
-      "field_name": "hastranslation_title",
-      "label": "Has Translation - Title",
-      "help_text": "The described resource pre-existed the referenced resource, which is essentially the same intellectual content presented in another language.",
-      "help_inline": false
-    },
-    {
-      "field_name": "hastranslation_uri",
-      "label": "URI:"
-    },
-    {
-      "field_name": "istranslation_title",
-      "label": "Is Translation Of",
-      "help_text": "The described resource is a translation of the referenced resource into another language.",
-      "help_inline": false
-    },
-    {
-      "field_name": "istranslation_uri",
-      "label": "URI:"
-    },
-    {
-      "field_name": "sensitivity",
-      "label": "Sensitivity",
-      "help_text": "An information security designation that identifies the minimum level of protection assigned to an information resource.",
-	    "required": true,
-	    "validators": "scheming_required",
-      "help_inline": false,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "unrestricted",
-          "label": "Unrestricted"
-        }
-      ]
     },
     {
       "field_name": "process_state",
@@ -817,8 +588,8 @@
       "form_snippet": "process_state.html",
       "help_text": "The state of work flow is going to be changed to",
       "help_inline": false,
-      "required": true,
-      "validators": "scheming_required ab_ps_resource_required",
+	    "required": true,
+	    "validators": "scheming_required ab_ps_resource_required",
       "preset": "select",
       "choices": [
         {"value": "Draft", "label": "Draft"},
@@ -847,31 +618,30 @@
       "field_name": "reason",
       "label": "Rejected Reason",
       "form_snippet": "markdown.html",
-      "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
+	  "form_placeholder": "A concise narrative of the content of an information resource that includes its purpose and function.",
       "help_text": "Reason of rejected state of work flow",
       "help_inline": false,
       "required": true,
-      "validators": "scheming_required" 
+	  "validators": "scheming_required" 
     }
   ],
   "resource_fields": [
     {
       "field_name": "name",
       "label": "Name",
-      "form_placeholder": "eg. Resource Title"
+      "form_placeholder": "eg. January 2011 Gold Prices"
     },
     {
       "field_name": "description",
       "label": "Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "Some useful notes about the data",
-      "help_text": "A concise narrative of the content of an information resource that includes its purpose and function.",
-      "help_inline": false
+      "form_placeholder": "Some useful notes about the data"
     },
     {
       "field_name": "url",
       "label": "URL",
-      "preset": "resource_url_upload"
+      "preset": "resource_url_upload",
+      "validators": "ab_ps_scheming_required"
     },
     {
       "field_name": "classification",
@@ -890,8 +660,7 @@
       "field_name": "format",
       "label": "Format",
       "preset": "resource_format_autocomplete",
-      "help_text": "The particular file format or encoding method used in the archiving and/or distribution of an information resource.",
-      "help_inline": false
+	    "form_placeholder": "The particular file format or encoding method used in the archiving and/or distribution of an information resource."
     },
     {
       "field_name": "file_size",
@@ -913,26 +682,6 @@
       "help_text": "Medium of resource",
       "help_inline": false,
       "form_placeholder": "Medium of resource."
-    },
-    {
-      "field_name": "serialinformation_title",
-      "label": "Serial Information - Title",
-      "help_text": "The volume and issue number, or other identifying enumeration, of a serial resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "serialinformation_uri",
-      "label": "URI:"
-    },
-    {
-      "field_name": "haspart_title",
-      "label": "Has Part - Title",
-      "help_text": "An information resource that is included either physically or logically in the described resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "haspart_uri",
-      "label": "URI:"
     }
   ]
 }

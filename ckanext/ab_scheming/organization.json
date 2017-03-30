@@ -1,0 +1,66 @@
+{
+  "scheming_version": 1,
+  "organization_type": "organization",
+  "about_url": "http://github.com/open-data/ckanext-scheming",
+  "fields": [
+    {
+      "field_name": "title",
+      "label": "Name",
+      "validators": "ignore_missing unicode",
+      "form_snippet": "large_text.html",
+      "form_attrs": {"data-module": "slug-preview-target"},
+      "form_placeholder": "My Organization"
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "validators": "not_empty unicode name_validator group_name_validator",
+      "form_snippet": "slug.html",
+      "form_placeholder": "my-organization"
+    },
+    {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "A little information about my organization..."
+    },
+    {
+      "field_name": "image_url",
+      "preset": "resource_url_upload",
+      "label": "Image",
+      "validators": "ignore_missing",
+      "form_placeholder": "http://example.com/my-image.jpg"
+    },
+    {
+      "field_name": "review_interval",
+      "label": "Review Interval",
+      "validators": "natural_number_validator",
+      "default": "30"
+    },
+    {
+        "field_name": "review_interval_type",
+        "label": "Review Interval Type",
+        "preset": "select",
+        "choices": [
+        {
+          "value": "days",
+          "label": "Days"
+        },
+        {
+          "value": "weeks",
+          "label": "Weeks"
+        },
+        {
+          "value": "months",
+          "label": "Months"
+        },
+        {
+          "value": "years",
+          "label": "Years"
+        }
+      ],
+      "required": true ,
+      "validators": "scheming_required"
+    }
+  ]
+}
