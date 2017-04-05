@@ -101,6 +101,7 @@ def topics_list_for_user(context, data_dict):
     return orgs_list
 
 
+@toolkit.side_effect_free
 def package_show(context, data_dict):
     """
     Cleanup package dict when 'ckanapi dump' is called for data transfer to OGP
