@@ -5,7 +5,7 @@ from . import change_pkg_dict_for_import_deployment
 
 
 def package_create(context, data_dict):
-    deployment_mode = toolkit.asbool(config.get('ckan.ab_scheming.deployment', False))
+    deployment_mode = toolkit.asbool(config.get('ckan.ab_scheming.for_load_to_iddp', False))
     # need to change data_dict if import from ckanapi
     if deployment_mode:
         data_dict = change_pkg_dict_for_import_deployment(data_dict, 'create')

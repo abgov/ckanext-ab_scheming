@@ -33,7 +33,21 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'ab_scheming')
-        
+
+    # IConfigurer
+    def update_config_schema(self, schema):
+
+        ignore_missing = toolkit.get_validator('ignore_missing')
+        is_boolean = toolkit.get_validator('boolean_validator')
+
+        schema.update({
+            'ckan.ab_scheming.for_load_to_iddp': [ignore_missing, is_boolean],
+            'ckan.ab_scheming.for_dump_to_ogp': [ignore_missing, is_boolean],
+        })
+
+        return schema
+    
+
     def dataset_facets(self, facets_dict, package_type):
         facets_dict['dataset_type'] = plugins.toolkit._('Information Type')
         facets_dict['groups'] = plugins.toolkit._('Topics')
