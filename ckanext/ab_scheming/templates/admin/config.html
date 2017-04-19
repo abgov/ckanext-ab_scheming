@@ -1,0 +1,27 @@
+{% ckan_extends %}
+
+{% import 'macros/form.html' as form %}
+
+{% block admin_form %}
+
+  {{ super() }}
+
+  <h3>Custom configuration options </h3>
+
+  {{ form.input('ckan.ab_scheming.for_load_to_iddp', id='field-ckan.ab_scheming.for_load_to_iddp', label=_('Load to IDDP with OGP dataset'), value=data['ckan.ab_scheming.for_load_to_iddp'], error=errors['ckan.ab_scheming.for_load_to_iddp']) }}
+
+  {{ form.input('ckan.ab_scheming.for_dump_to_ogp', id='field-ckan.ab_scheming.for_dump_to_ogp', label=_('Dump dataset of IDDP to OGP'), value=data['ckan.ab_scheming.for_dump_to_ogp'], error=errors['ckan.ab_scheming.for_dump_to_ogp']) }}
+
+
+{% endblock %}
+
+
+{% block admin_form_help %}
+
+  {{ super() }}
+
+  <p><strong>Load to IDDP with OGP dataset:</strong> Set to True when needs to ckanapi load Open Government Portal's datasets to IDDP. After that, needs to set it False when load is done to make the server function properly.</p>
+
+  <p><strong>Dump dataset of IDDP to OGP:</strong> Set to True when needs to ckanapi dump IDDP datasets for use of ckanapi load to OGP. Set it False when dump is done to make the server function properly.</p>
+
+{% endblock %}

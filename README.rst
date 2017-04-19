@@ -153,4 +153,17 @@ This field has two choices for dropdown list.
 
     The attribute 'form_restrict_choices_to' is for admin of organization and sysadmin only.
     The attribute 'choices' is for all members of organization.
+
+----------------------------------------------------------------------
+Add two flags to control ckanapi load to IDDP and ckanapi dump for OGP
+----------------------------------------------------------------------
+
+These two flags are set in ini config file.
     
+    ckan.ab_scheming.for_load_to_iddp = false
+    ckan.ab_scheming.for_dump_to_ogp = false
+
+    ckan.ab_scheming.for_load_to_iddp is for ckanapi load dataset of OGP to IDDP. If need to do so, set True. If not, set False.
+    ckan.ab_scheming.for_dump_to_ogp is for ckanapi dump dataset of IDDP for ckanapi load into OGP. If need to do so, set True. If not, set False.
+
+    These two flags are also controlled in run time in url /ckan-admin/config

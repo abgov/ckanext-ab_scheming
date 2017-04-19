@@ -9,7 +9,8 @@ from ckanext.ab_scheming.validation import (
 )
 from ckan.logic.action  import get as ckan_get
 from ckanext.ab_scheming.logic.action.get import (
-    topics_list_for_user
+    topics_list_for_user,
+    package_show
 )
 from ckanext.ab_scheming.logic.action.create import package_create
 from ckanext.ab_scheming.logic.action.update import package_update
@@ -32,7 +33,21 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'ab_scheming')
-        
+
+    # IConfigurer
+    def update_config_schema(self, schema):
+
+        ignore_missing = toolkit.get_validator('ignore_missing')
+        is_boolean = toolkit.get_validator('boolean_validator')
+
+        schema.update({
+            'ckan.ab_scheming.for_load_to_iddp': [ignore_missing, is_boolean],
+            'ckan.ab_scheming.for_dump_to_ogp': [ignore_missing, is_boolean],
+        })
+
+        return schema
+    
+
     def dataset_facets(self, facets_dict, package_type):
         facets_dict['dataset_type'] = plugins.toolkit._('Information Type')
         facets_dict['groups'] = plugins.toolkit._('Topics')
@@ -71,6 +86,7 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
                        if callable(function))
         '''
         actions = {'topics_list_for_user': topics_list_for_user,
+                    'package_show': package_show,
                     'package_create': package_create,
                     'package_update': package_update
                   }
