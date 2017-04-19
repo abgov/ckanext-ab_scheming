@@ -59,6 +59,7 @@ class Ab_SchemingPlugin(plugins.SingletonPlugin):
         """
         if 'audience' in pkg_dict:
             pkg_dict['audience'] = json.loads(pkg_dict['audience'])
+
         if 'topics' in pkg_dict:
             pkg_dict['topics'] = json.loads(pkg_dict['topics'])
         """

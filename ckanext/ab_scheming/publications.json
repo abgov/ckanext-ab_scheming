@@ -361,6 +361,15 @@
       ]
     },
     {
+      "field_name": "contributors",
+      "label": "Contributor",
+      "form_placeholder": "eg. Contributor",
+      "help_text": "A person or organization responsible for making significant contributions to the content of an information resource.",
+      "help_inline": false,
+      "preset": "repeating_text",
+      "form_blanks": 3
+    },
+    {
       "field_name": "owner_org",
       "label": "Publisher",
       "preset": "dataset_organization",
@@ -421,12 +430,6 @@
       "form_snippet": "markdown.html",
       "form_placeholder": "Description of factors that support the effective interpretation and use of the information resource.",
       "help_text": "Description of factors that support the effective interpretation and use of the information resource.",
-      "help_inline": false
-    },
-    {
-      "field_name": "spatialcoverage",
-      "label": "Spatial Coverage",
-      "help_text": "A geographical area or spatial extent covered by the content of an information resource.",
       "help_inline": false
     },
     {
@@ -631,28 +634,28 @@
       "label": "Place of Publication",
       "preset": "select",
       "choices": [
-        {"value": "Edmonton", "label": "Edmonton"},
-        {"value": "Calgary", "label": "Calgary"},
-        {"value": "Airdrie", "label": "Airdrie"},
-        {"value": "Brooks", "label": "Brooks"},
-        {"value": "Camrose", "label": "Camrose"},
-        {"value": "Chestermere", "label": "Chestermere"},
-        {"value": "ColdLake", "label": "Cold Lake"},
-        {"value": "FortMcMurray", "label": "Fort McMurray"},
-        {"value": "FortSaskatchewan", "label": "Fort Saskatchewan"},
-        {"value": "GrandePrairie", "label": "Grande Prairie"},
-        {"value": "Lacombe", "label": "Lacombe"},
-        {"value": "Leduc", "label": "Leduc"},
-        {"value": "Lethbridge", "label": "Lethbridge"},
-        {"value": "Lloydminster", "label": "Lloydminster"},
-        {"value": "MedicineHat", "label": "Medicine Hat"},
-        {"value": "RedDeer", "label": "Red Deer"},
-        {"value": "SherwoodPark", "label": "Sherwood Park"},
-        {"value": "SpruceGrove", "label": "Spruce Grove"},
-        {"value": "StAlbert", "label": "St. Albert"},
-        {"value": "Wetaskiwin", "label": "Wetaskiwin"},
-        {"value": "Morinville", "label": "Morinville"},
-        {"value": "Strathmore", "label": "Strathmore"}
+          {"value": "Edmonton", "label": "Edmonton"},
+          {"value": "Calgary", "label": "Calgary"},
+          {"value": "Airdrie", "label": "Airdrie"},
+          {"value": "Brooks", "label": "Brooks"},
+          {"value": "Camrose", "label": "Camrose"},
+          {"value": "Chestermere", "label": "Chestermere"},
+          {"value": "ColdLake", "label": "Cold Lake"},
+          {"value": "FortMcMurray", "label": "Fort McMurray"},
+          {"value": "FortSaskatchewan", "label": "Fort Saskatchewan"},
+          {"value": "GrandePrairie", "label": "Grande Prairie"},
+          {"value": "Lacombe", "label": "Lacombe"},
+          {"value": "Leduc", "label": "Leduc"},
+          {"value": "Lethbridge", "label": "Lethbridge"},
+          {"value": "Lloydminster", "label": "Lloydminster"},
+          {"value": "MedicineHat", "label": "Medicine Hat"},
+          {"value": "RedDeer", "label": "Red Deer"},
+          {"value": "SherwoodPark", "label": "Sherwood Park"},
+          {"value": "SpruceGrove", "label": "Spruce Grove"},
+          {"value": "StAlbert", "label": "St. Albert"},
+          {"value": "Wetaskiwin", "label": "Wetaskiwin"},
+          {"value": "Morinville", "label": "Morinville"},
+          {"value": "Strathmore", "label": "Strathmore"}
       ]
     },
     {
@@ -704,7 +707,6 @@
        "help_text": "The date on which an information resource is scheduled for review.",
        "help_inline": false
     },
-    
     {
       "field_name": "issuedate",
       "label": "Date Issued",

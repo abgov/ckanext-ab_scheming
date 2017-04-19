@@ -248,3 +248,4 @@ def get_topic_name(titles):
         t = t_dict['title']
         tmp.append(t)
     return tmp
+
