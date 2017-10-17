@@ -110,6 +110,7 @@
         {"value": "Multimedia", "label": "Multimedia"},
         {"value": "Notice", "label": "Notice"},
         {"value": "Orders and Directives", "label": "Orders and Directives"},
+        {"value": "Organizational Description", "label": "Organizational Description"},
         {"value": "Policy", "label": "Policy"},
         {"value": "Presentation", "label": "Presentation"},
         {"value": "Reference Material", "label": "Reference Material"},
