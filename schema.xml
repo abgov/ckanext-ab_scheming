@@ -16,6 +16,14 @@
  limitations under the License.
 -->
 
+<!--
+     NB Please copy changes to this file into the multilingual schema:
+        ckanext/multilingual/solr/schema.xml
+-->
+
+<!-- We update the version when there is a backward-incompatible change to this
+schema. In this case the version should be set to the next CKAN version number.
+(x.y but not x.y.z since it needs to be a float) -->
 <schema name="ckan" version="2.3">
 
 <types>
@@ -109,6 +117,7 @@
     <field name="ratings_average" type="float" indexed="true" stored="false" />
     <field name="tags" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="groups" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="organization" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="audience" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="topic" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="pubtype" type="string" indexed="true" stored="true" multiValued="true"/>
@@ -179,10 +188,11 @@
 <copyField source="license" dest="text"/>
 <copyField source="notes" dest="text"/>
 <copyField source="tags" dest="text"/>
+<copyField source="groups" dest="text"/>
+<copyField source="organization" dest="text"/>
 <copyField source="audience" dest="text"/>
 <copyField source="pubtype" dest="text"/>
 <copyField source="topic" dest="text"/>
-<copyField source="groups" dest="text"/>
 <copyField source="res_name" dest="text"/>
 <copyField source="res_description" dest="text"/>
 <copyField source="maintainer" dest="text"/>
