@@ -378,7 +378,7 @@
       "form_placeholder": "opendata@gov.ab.ca",
       "display_property": "dc:creator",
       "display_snippet": "email.html",
-      "display_email_name_field": "author"
+      "display_email_name_field": "contact_email"
     },
     {
       "field_name": "contactother",
